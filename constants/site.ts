@@ -28,8 +28,8 @@ export const site = {
   social: {
     instagram: '',
     tiktok: '',
-    linkedin: '',     // Optional — add when ready
-    github: '',       // Optional — add when ready
+    linkedin: '', // Optional — add when ready
+    github: '', // Optional — add when ready
   },
 
   // ── Feature Flags ─────────────────────────────────────────────

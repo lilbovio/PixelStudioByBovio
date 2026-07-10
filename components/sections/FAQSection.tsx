@@ -37,14 +37,9 @@ export function FAQSection() {
   }
 
   return (
-    <Section
-      id="faq"
-      variant="gray"
-      labelledBy="faq-heading"
-    >
+    <Section id="faq" variant="gray" labelledBy="faq-heading">
       <Container narrow>
         <div className="flex flex-col gap-12">
-
           {/* Header */}
           <AnimationWrapper variant="fadeUp">
             <SectionHeader
@@ -74,10 +69,8 @@ export function FAQSection() {
 
           {/* Bottom CTA */}
           <AnimationWrapper variant="fadeUp" delay={0.15}>
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 pt-2">
-              <p className="type-body text-text-muted">
-                Still have questions?
-              </p>
+            <div className="flex flex-col items-start gap-4 pt-2 sm:flex-row sm:items-center">
+              <p className="type-body text-text-muted">Still have questions?</p>
               <WhatsAppCTA
                 label="Ask Us on WhatsApp"
                 variant="secondary"
@@ -86,7 +79,6 @@ export function FAQSection() {
               />
             </div>
           </AnimationWrapper>
-
         </div>
       </Container>
     </Section>

@@ -23,23 +23,23 @@ import type { ReactNode } from 'react'
 // ─── Types ────────────────────────────────────────────────────
 
 interface WhatsAppCTAProps {
-  label?:     string
-  variant?:   'primary' | 'secondary' | 'ghost'
-  size?:      'sm' | 'md' | 'lg'
+  label?: string
+  variant?: 'primary' | 'secondary' | 'ghost'
+  size?: 'sm' | 'md' | 'lg'
   className?: string
   /** Custom message override — defaults to standard intro message */
-  message?:   string
+  message?: string
   /** Additional content (e.g., an icon) */
-  icon?:      ReactNode
+  icon?: ReactNode
   iconPosition?: 'left' | 'right'
 }
 
 // ─── Component ────────────────────────────────────────────────
 
 export function WhatsAppCTA({
-  label       = 'Start a Project',
-  variant     = 'primary',
-  size        = 'md',
+  label = 'Start a Project',
+  variant = 'primary',
+  size = 'md',
   className,
   message,
   icon,

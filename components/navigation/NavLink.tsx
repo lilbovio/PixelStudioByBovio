@@ -20,20 +20,20 @@ import { cn } from '@/lib/cn'
 // ─── Types ────────────────────────────────────────────────────
 
 interface NavLinkProps {
-  href:       string
-  children:   React.ReactNode
+  href: string
+  children: React.ReactNode
   /** Close mobile menu when a link is clicked */
-  onClick?:   () => void
+  onClick?: () => void
   className?: string
   /** Desktop nav (small text, horizontal) vs mobile (large text, stacked) */
-  size?:      'desktop' | 'mobile'
+  size?: 'desktop' | 'mobile'
 }
 
 // ─── Component ────────────────────────────────────────────────
 
 export function NavLink({ href, children, onClick, className, size = 'desktop' }: NavLinkProps) {
-  const pathname  = usePathname()
-  const isActive  = pathname === href || (href !== '/' && pathname.startsWith(href))
+  const pathname = usePathname()
+  const isActive = pathname === href || (href !== '/' && pathname.startsWith(href))
 
   if (size === 'mobile') {
     return (
@@ -43,8 +43,8 @@ export function NavLink({ href, children, onClick, className, size = 'desktop' }
         className={cn(
           'block w-full',
           'type-heading-md text-text-primary',
-          'py-4 border-b border-border',
-          'transition-colors duration-fast ease-smooth',
+          'border-b border-border py-4',
+          'duration-fast transition-colors ease-smooth',
           isActive ? 'text-accent' : 'hover:text-text-muted',
           className
         )}
@@ -65,10 +65,8 @@ export function NavLink({ href, children, onClick, className, size = 'desktop' }
         // Typography — slightly tighter for premium nav feel
         'type-btn',
         // Color transition
-        'transition-colors duration-fast ease-smooth',
-        isActive
-          ? 'text-text-primary font-medium'
-          : 'text-text-muted hover:text-text-primary',
+        'duration-fast transition-colors ease-smooth',
+        isActive ? 'font-medium text-text-primary' : 'text-text-muted hover:text-text-primary',
         className
       )}
       aria-current={isActive ? 'page' : undefined}
@@ -81,7 +79,7 @@ export function NavLink({ href, children, onClick, className, size = 'desktop' }
         className={cn(
           'absolute -bottom-0.5 left-0 h-px w-full origin-left',
           'bg-accent',
-          'transition-transform duration-fast ease-smooth',
+          'duration-fast transition-transform ease-smooth',
           isActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
         )}
       />

@@ -25,14 +25,9 @@ import { whyUsItems } from '@/constants/whyUs'
 
 export function WhyUsSection() {
   return (
-    <Section
-      id="why-us"
-      variant="white"
-      labelledBy="why-us-heading"
-    >
+    <Section id="why-us" variant="white" labelledBy="why-us-heading">
       <Container>
         <div className="flex flex-col gap-12">
-
           {/* Header */}
           <AnimationWrapper variant="fadeUp">
             <SectionHeader
@@ -47,7 +42,7 @@ export function WhyUsSection() {
           <StaggerWrapper
             as="ul"
             speed="normal"
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
+            className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3"
           >
             {whyUsItems.slice(0, 6).map((item) => (
               <AnimationWrapper key={item.id} variant="scaleUp" as="li" className="h-full">
@@ -55,7 +50,6 @@ export function WhyUsSection() {
               </AnimationWrapper>
             ))}
           </StaggerWrapper>
-
         </div>
       </Container>
     </Section>

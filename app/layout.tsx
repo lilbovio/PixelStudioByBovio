@@ -10,9 +10,7 @@ import './globals.css'
 // ─── Site Metadata ────────────────────────────────────────────
 // Default metadata — individual pages override these via generateMetadata()
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? 'https://pixelstudiobybovio.lat'
-  ),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://pixelstudiobybovio.lat'),
   title: {
     default: 'Pixel Studio by Bovio — Digital Design Studio',
     template: '%s — Pixel Studio by Bovio',
@@ -68,16 +66,12 @@ export const metadata: Metadata = {
 }
 
 // ─── Root Layout ──────────────────────────────────────────────
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={GeistSans.variable}>
       <body>
         <FloatingNavbar />
-        <main id="main-content" tabIndex={-1} className="pt-16 smooth-scroll">
+        <main id="main-content" tabIndex={-1} className="smooth-scroll pt-16">
           {children}
         </main>
         <Footer />

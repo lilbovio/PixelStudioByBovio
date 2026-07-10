@@ -22,13 +22,13 @@ import type { ReactNode } from 'react'
 // ─── Types ────────────────────────────────────────────────────
 
 type BadgeVariant = 'default' | 'accent' | 'muted' | 'dark'
-type BadgeSize    = 'sm' | 'md'
+type BadgeSize = 'sm' | 'md'
 
 interface BadgeProps {
-  variant?:   BadgeVariant
-  size?:      BadgeSize
+  variant?: BadgeVariant
+  size?: BadgeSize
   className?: string
-  children:   ReactNode
+  children: ReactNode
 }
 
 // ─── Styles ───────────────────────────────────────────────────
@@ -42,9 +42,9 @@ const base = [
 
 const variants: Record<BadgeVariant, string> = {
   default: 'bg-bg-tertiary text-text-muted border border-border',
-  accent:  'bg-accent-light text-accent border border-accent/20',
-  muted:   'bg-bg-secondary text-text-disabled border border-border',
-  dark:    'bg-white/10 text-white/80 border border-white/20',
+  accent: 'bg-accent-light text-accent border border-accent/20',
+  muted: 'bg-bg-secondary text-text-disabled border border-border',
+  dark: 'bg-white/10 text-white/80 border border-white/20',
 }
 
 const sizes: Record<BadgeSize, string> = {
@@ -55,9 +55,5 @@ const sizes: Record<BadgeSize, string> = {
 // ─── Component ────────────────────────────────────────────────
 
 export function Badge({ variant = 'default', size = 'md', className, children }: BadgeProps) {
-  return (
-    <span className={cn(base, variants[variant], sizes[size], className)}>
-      {children}
-    </span>
-  )
+  return <span className={cn(base, variants[variant], sizes[size], className)}>{children}</span>
 }

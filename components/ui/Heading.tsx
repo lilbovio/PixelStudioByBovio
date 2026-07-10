@@ -25,17 +25,17 @@ import type { ReactNode } from 'react'
 // ─── Types ────────────────────────────────────────────────────
 
 type HeadingLevel = 1 | 2 | 3 | 4 | 5 | 6
-type HeadingSize  = 'hero' | 'display' | 'xl' | 'lg' | 'md' | 'sm'
+type HeadingSize = 'hero' | 'display' | 'xl' | 'lg' | 'md' | 'sm'
 
 interface HeadingProps {
-  level:      HeadingLevel
-  size?:      HeadingSize
+  level: HeadingLevel
+  size?: HeadingSize
   /** Override the color. Defaults to text-text-primary via .type-* class. */
-  color?:     'primary' | 'inverse' | 'muted' | 'inherit'
-  balance?:   boolean
+  color?: 'primary' | 'inverse' | 'muted' | 'inherit'
+  balance?: boolean
   className?: string
-  children:   ReactNode
-  id?:        string
+  children: ReactNode
+  id?: string
 }
 
 // ─── Maps ─────────────────────────────────────────────────────
@@ -51,18 +51,18 @@ const defaultSizes: Record<HeadingLevel, HeadingSize> = {
 }
 
 const sizeClasses: Record<HeadingSize, string> = {
-  hero:    'type-hero',
+  hero: 'type-hero',
   display: 'type-display',
-  xl:      'type-heading-xl',
-  lg:      'type-heading-lg',
-  md:      'type-heading-md',
-  sm:      'type-heading-sm',
+  xl: 'type-heading-xl',
+  lg: 'type-heading-lg',
+  md: 'type-heading-md',
+  sm: 'type-heading-sm',
 }
 
 const colorClasses: Record<NonNullable<HeadingProps['color']>, string> = {
   primary: 'text-text-primary',
   inverse: 'text-text-inverse',
-  muted:   'text-text-muted',
+  muted: 'text-text-muted',
   inherit: 'text-inherit',
 }
 

@@ -19,34 +19,34 @@
 
 'use client'
 
-import Link                         from 'next/link'
+import Link from 'next/link'
 import { useEffect, useRef, useCallback } from 'react'
-import { AnimatePresence, motion }  from 'framer-motion'
-import { X }                        from 'lucide-react'
-import { usePathname }              from 'next/navigation'
+import { AnimatePresence, motion } from 'framer-motion'
+import { X } from 'lucide-react'
+import { usePathname } from 'next/navigation'
 import { mobileMenuOverlay, mobileMenuPanel } from '@/lib/motion'
-import { useReducedMotion }         from '@/hooks/useReducedMotion'
-import { navItems, navCTA }         from '@/constants/navigation'
-import { buildWhatsAppURL }         from '@/lib/whatsapp'
-import { NavLink }                  from './NavLink'
-import { Logomark }                 from '@/components/icons/Logomark'
-import { Button }                   from '@/components/ui/Button'
-import { cn }                       from '@/lib/cn'
+import { useReducedMotion } from '@/hooks/useReducedMotion'
+import { navItems, navCTA } from '@/constants/navigation'
+import { buildWhatsAppURL } from '@/lib/whatsapp'
+import { NavLink } from './NavLink'
+import { Logomark } from '@/components/icons/Logomark'
+import { Button } from '@/components/ui/Button'
+import { cn } from '@/lib/cn'
 
 // ─── Types ────────────────────────────────────────────────────
 
 interface MobileMenuProps {
-  isOpen:  boolean
+  isOpen: boolean
   onClose: () => void
 }
 
 // ─── Component ────────────────────────────────────────────────
 
 export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
-  const shouldReduce   = useReducedMotion()
+  const shouldReduce = useReducedMotion()
   const closeButtonRef = useRef<HTMLButtonElement>(null)
-  const whatsappUrl    = buildWhatsAppURL()
-  const pathname       = usePathname()
+  const whatsappUrl = buildWhatsAppURL()
+  const pathname = usePathname()
 
   // ── Close menu on route change ────────────────────────────
   // Handles the case where a NavLink navigates to a new page while
@@ -81,7 +81,9 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
     } else {
       document.body.style.overflow = ''
     }
-    return () => { document.body.style.overflow = '' }
+    return () => {
+      document.body.style.overflow = ''
+    }
   }, [isOpen])
 
   // ── Focus trap ────────────────────────────────────────────
@@ -92,7 +94,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
       'button, [href], input, [tabindex]:not([tabindex="-1"])'
     )
     const first = focusable[0]
-    const last  = focusable[focusable.length - 1]
+    const last = focusable[focusable.length - 1]
     if (!first || !last) return
     if (e.shiftKey && document.activeElement === first) {
       e.preventDefault()
@@ -107,7 +109,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
   const overlayV = noMotion
     ? { hidden: { opacity: 0 }, visible: { opacity: 1 }, exit: { opacity: 0 } }
     : mobileMenuOverlay
-  const panelV   = noMotion
+  const panelV = noMotion
     ? { hidden: { opacity: 0 }, visible: { opacity: 1 }, exit: { opacity: 0 } }
     : mobileMenuPanel
 
@@ -140,19 +142,19 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             aria-label="Navigation menu"
             onKeyDown={handleTabKey}
             className={cn(
-              'fixed top-0 inset-x-0 z-modal',
+              'fixed inset-x-0 top-0 z-modal',
               'glass border-b border-border-subtle shadow-elevated',
               'md:hidden',
-              'focus:outline-none',
+              'focus:outline-none'
             )}
           >
             {/* Top bar */}
-            <div className="flex items-center justify-between px-5 h-16 border-b border-border">
+            <div className="flex h-16 items-center justify-between border-b border-border px-5">
               <Link
                 href="/"
                 onClick={onClose}
                 aria-label="Pixel Studio by Bovio — Home"
-                className="text-[1.125rem] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent rounded-sm"
+                className="rounded-sm text-[1.125rem] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
               >
                 <Logomark variant="mark" scheme="dark" />
               </Link>
@@ -162,10 +164,10 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                 onClick={onClose}
                 aria-label="Close navigation menu"
                 className={cn(
-                  'flex items-center justify-center size-10 rounded-md',
-                  'text-text-secondary hover:text-text-primary hover:bg-bg-secondary',
-                  'transition-colors duration-fast ease-smooth',
-                  'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent',
+                  'flex size-10 items-center justify-center rounded-md',
+                  'text-text-secondary hover:bg-bg-secondary hover:text-text-primary',
+                  'duration-fast transition-colors ease-smooth',
+                  'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent'
                 )}
               >
                 <X size={20} aria-hidden="true" />
@@ -175,12 +177,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             {/* Nav links */}
             <nav aria-label="Mobile navigation" className="px-5">
               {navItems.map((item) => (
-                <NavLink
-                  key={item.href}
-                  href={item.href}
-                  size="mobile"
-                  onClick={onClose}
-                >
+                <NavLink key={item.href} href={item.href} size="mobile" onClick={onClose}>
                   {item.label}
                 </NavLink>
               ))}

@@ -13,21 +13,21 @@ Pixel by Bovio is a premium Digital Design Studio website whose single objective
 
 ## 2. Technology Stack
 
-| Concern | Choice | Rationale |
-|---|---|---|
-| Framework | Next.js 15 | App Router, RSC, built-in SEO, Vercel-native |
-| Language | TypeScript (strict) | Type safety, self-documenting, refactor confidence |
-| Styling | Tailwind CSS v4 | Utility-first, token-native, no runtime overhead |
-| Animations | Framer Motion | Declarative, GPU-optimized, `useReducedMotion` support |
-| Icons | Lucide React | Tree-shakeable, single stroke system, consistent |
-| Font | Geist (next/font) | Zero CLS, modern, neutral, Vercel-official |
-| Images | next/image | Automatic WebP/AVIF, lazy load, CLS prevention |
-| Metadata | Next.js Metadata API | Per-page OG, Twitter, canonical, structured data |
-| Deployment | Vercel | Zero-config, Edge Network, preview URLs |
-| Analytics | Vercel Analytics + Speed Insights | Non-invasive, privacy-first, no cookie banner |
-| Package Manager | pnpm | Fast, strict, disk-efficient |
-| Linting | ESLint (next/core-web-vitals) | Catches accessibility and performance issues |
-| Formatting | Prettier | Consistent style, enforced on commit |
+| Concern         | Choice                            | Rationale                                              |
+| --------------- | --------------------------------- | ------------------------------------------------------ |
+| Framework       | Next.js 15                        | App Router, RSC, built-in SEO, Vercel-native           |
+| Language        | TypeScript (strict)               | Type safety, self-documenting, refactor confidence     |
+| Styling         | Tailwind CSS v4                   | Utility-first, token-native, no runtime overhead       |
+| Animations      | Framer Motion                     | Declarative, GPU-optimized, `useReducedMotion` support |
+| Icons           | Lucide React                      | Tree-shakeable, single stroke system, consistent       |
+| Font            | Geist (next/font)                 | Zero CLS, modern, neutral, Vercel-official             |
+| Images          | next/image                        | Automatic WebP/AVIF, lazy load, CLS prevention         |
+| Metadata        | Next.js Metadata API              | Per-page OG, Twitter, canonical, structured data       |
+| Deployment      | Vercel                            | Zero-config, Edge Network, preview URLs                |
+| Analytics       | Vercel Analytics + Speed Insights | Non-invasive, privacy-first, no cookie banner          |
+| Package Manager | pnpm                              | Fast, strict, disk-efficient                           |
+| Linting         | ESLint (next/core-web-vitals)     | Catches accessibility and performance issues           |
+| Formatting      | Prettier                          | Consistent style, enforced on commit                   |
 
 ---
 
@@ -39,16 +39,17 @@ The site is **predominantly static**. Content lives in `constants/` as typed dat
 
 ### Rendering Strategy
 
-| Page / Feature | Strategy | Reason |
-|---|---|---|
-| All pages | Static (SSG at build time) | No dynamic data, maximum performance |
-| Project detail modal/page | Static | Project data is static |
-| Contact form (future) | Server Action | Progressive enhancement, no client JS required |
-| Sitemap / robots | Dynamic route | Auto-generated from constants |
+| Page / Feature            | Strategy                   | Reason                                         |
+| ------------------------- | -------------------------- | ---------------------------------------------- |
+| All pages                 | Static (SSG at build time) | No dynamic data, maximum performance           |
+| Project detail modal/page | Static                     | Project data is static                         |
+| Contact form (future)     | Server Action              | Progressive enhancement, no client JS required |
+| Sitemap / robots          | Dynamic route              | Auto-generated from constants                  |
 
 ### Server vs. Client Component Policy
 
 **Server Components (default):**
+
 - All page files (`page.tsx`)
 - All layout files (`layout.tsx`)
 - All section components that only render markup
@@ -56,6 +57,7 @@ The site is **predominantly static**. Content lives in `constants/` as typed dat
 - SEO / metadata helpers
 
 **Client Components (`"use client"` required):**
+
 - `FloatingNavbar` — scroll-aware background transition
 - `MobileMenu` — open/close state
 - `FAQAccordion` — open/close state
@@ -197,16 +199,16 @@ pixel-by-bovio/
 
 ## 5. Pages
 
-| Route | File | Description |
-|---|---|---|
-| `/` | `app/page.tsx` | Homepage: full conversion narrative |
-| `/services` | `app/services/page.tsx` | Expanded service descriptions |
-| `/work` | `app/work/page.tsx` | Full project gallery grid |
-| `/work/[slug]` | `app/work/[slug]/page.tsx` | Individual project case study |
-| `/process` | `app/process/page.tsx` | Expanded 4-step process |
-| `/about` | `app/about/page.tsx` | Studio story and positioning |
-| `/contact` | `app/contact/page.tsx` | Contact options + WhatsApp + form |
-| `404` | `app/not-found.tsx` | Branded not-found page |
+| Route          | File                       | Description                         |
+| -------------- | -------------------------- | ----------------------------------- |
+| `/`            | `app/page.tsx`             | Homepage: full conversion narrative |
+| `/services`    | `app/services/page.tsx`    | Expanded service descriptions       |
+| `/work`        | `app/work/page.tsx`        | Full project gallery grid           |
+| `/work/[slug]` | `app/work/[slug]/page.tsx` | Individual project case study       |
+| `/process`     | `app/process/page.tsx`     | Expanded 4-step process             |
+| `/about`       | `app/about/page.tsx`       | Studio story and positioning        |
+| `/contact`     | `app/contact/page.tsx`     | Contact options + WhatsApp + form   |
+| `404`          | `app/not-found.tsx`        | Branded not-found page              |
 
 **Future pages (architecture ready):**
 `/pricing`, `/blog`, `/blog/[slug]`, `/resources`, `/case-studies/[slug]`
@@ -215,10 +217,10 @@ pixel-by-bovio/
 
 ## 6. Layouts
 
-| File | Wraps | Contains |
-|---|---|---|
-| `app/layout.tsx` | Everything | HTML shell, font injection, global CSS, `<Navbar>`, `<Footer>`, `<WhatsAppButton>`, analytics |
-| `app/(marketing)/layout.tsx` | Optional group | Could isolate marketing pages from future app routes |
+| File                         | Wraps          | Contains                                                                                      |
+| ---------------------------- | -------------- | --------------------------------------------------------------------------------------------- |
+| `app/layout.tsx`             | Everything     | HTML shell, font injection, global CSS, `<Navbar>`, `<Footer>`, `<WhatsAppButton>`, analytics |
+| `app/(marketing)/layout.tsx` | Optional group | Could isolate marketing pages from future app routes                                          |
 
 The root layout is minimal. It does not render anything except structural providers. All visual chrome (Navbar, Footer) is assembled here.
 
@@ -248,6 +250,7 @@ No prop drilling past two levels. Data is passed directly from section → card.
 See [`docs/DevelopmentStandards.md`](./DevelopmentStandards.md) for full SEO implementation rules.
 
 Summary:
+
 - Every page exports a `generateMetadata()` function
 - `app/sitemap.ts` auto-generates from `constants/` data
 - `app/robots.ts` is generated code
@@ -285,6 +288,7 @@ Recommended CMS when ready: **Sanity** (React-native, excellent Next.js support,
 Vercel Analytics and Speed Insights are injected in `app/layout.tsx` via their official Next.js components. They require no cookies and no consent banner under most jurisdictions.
 
 Future additions (modular, non-blocking):
+
 - `lib/analytics.ts` — thin wrapper for `gtag` / GTM events
 - `lib/pixels.ts` — Meta Pixel event helpers
 - All tracked via environment variables (`NEXT_PUBLIC_GTM_ID`, etc.)
@@ -293,16 +297,16 @@ Future additions (modular, non-blocking):
 
 ## 12. Performance Targets
 
-| Metric | Target |
-|---|---|
-| Lighthouse Performance | 95+ |
-| Lighthouse Accessibility | 100 |
-| Lighthouse Best Practices | 100 |
-| Lighthouse SEO | 100 |
-| LCP | < 2.5s |
-| CLS | < 0.1 |
-| FID / INP | < 200ms |
-| JS Bundle (initial) | < 150KB gzipped |
+| Metric                    | Target          |
+| ------------------------- | --------------- |
+| Lighthouse Performance    | 95+             |
+| Lighthouse Accessibility  | 100             |
+| Lighthouse Best Practices | 100             |
+| Lighthouse SEO            | 100             |
+| LCP                       | < 2.5s          |
+| CLS                       | < 0.1           |
+| FID / INP                 | < 200ms         |
+| JS Bundle (initial)       | < 150KB gzipped |
 
 ---
 
@@ -330,7 +334,9 @@ Future additions (modular, non-blocking):
 ## 15. Implementation Roadmap
 
 ### Phase 0 — Foundation (Complexity: Low)
+
 **Goal:** Project compiles, runs, and deploys cleanly.
+
 - Initialize Next.js 15 with TypeScript strict, Tailwind v4, ESLint, Prettier
 - Configure `next.config.ts` (image domains, headers, redirects)
 - Install all dependencies
@@ -340,7 +346,9 @@ Future additions (modular, non-blocking):
 - Create `constants/site.ts`
 
 ### Phase 1 — Design System (Complexity: Medium)
+
 **Goal:** Every primitive component exists and is visually correct.
+
 - Implement all tokens (colors, spacing, radius, shadow, motion)
 - Build `ui/` components: Button, Badge, Heading, Input, Textarea, IconWrapper
 - Build `layout/` components: Container, Section, SectionHeader
@@ -348,7 +356,9 @@ Future additions (modular, non-blocking):
 - Visual QA on all primitives
 
 ### Phase 2 — Navigation & Shell (Complexity: Medium)
+
 **Goal:** Full site navigation works on all breakpoints.
+
 - FloatingNavbar with glass scroll effect
 - MobileMenu (drawer)
 - Footer
@@ -356,7 +366,9 @@ Future additions (modular, non-blocking):
 - Root layout assembled
 
 ### Phase 3 — Homepage (Complexity: High)
+
 **Goal:** Complete homepage tells the full conversion story.
+
 - HeroSection (with entrance animation sequence)
 - TrustBadgesSection
 - ProblemSection
@@ -369,7 +381,9 @@ Future additions (modular, non-blocking):
 - FinalCTASection
 
 ### Phase 4 — Inner Pages (Complexity: Medium)
+
 **Goal:** All routes exist and are production-quality.
+
 - `/services` page
 - `/work` page + `/work/[slug]` project detail
 - `/process` page
@@ -378,7 +392,9 @@ Future additions (modular, non-blocking):
 - Custom 404 page
 
 ### Phase 5 — SEO & Performance (Complexity: Medium)
+
 **Goal:** Lighthouse scores hit targets.
+
 - Per-page metadata + generateMetadata()
 - JSON-LD structured data
 - sitemap.ts + robots.ts
@@ -388,7 +404,9 @@ Future additions (modular, non-blocking):
 - Core Web Vitals validation
 
 ### Phase 6 — QA & Launch (Complexity: Medium)
+
 **Goal:** Every item in the PRD quality checklist passes.
+
 - Responsive QA (320px–1920px)
 - Accessibility audit (axe, keyboard navigation)
 - Animation audit (reduced motion, frame drops)
@@ -436,6 +454,7 @@ prettier-plugin-tailwindcss
 ```
 
 **Not installed at launch (future):**
+
 ```
 # CMS
 @sanity/client

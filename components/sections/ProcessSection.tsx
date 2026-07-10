@@ -17,14 +17,9 @@ import { processSteps } from '@/constants/process'
 
 export function ProcessSection() {
   return (
-    <Section
-      id="process"
-      variant="gray"
-      labelledBy="process-heading"
-    >
+    <Section id="process" variant="gray" labelledBy="process-heading">
       <Container>
         <div className="flex flex-col gap-16">
-
           <AnimationWrapper variant="fadeUp">
             <SectionHeader
               label="How We Work"
@@ -38,9 +33,10 @@ export function ProcessSection() {
           <div className="relative">
             {/* Horizontal connector — gradient line on desktop */}
             <div
-              className="hidden lg:block absolute top-5 left-10 right-10 h-px"
+              className="absolute top-5 right-10 left-10 hidden h-px lg:block"
               style={{
-                background: 'linear-gradient(90deg, transparent, var(--color-border) 10%, var(--color-border) 90%, transparent)',
+                background:
+                  'linear-gradient(90deg, transparent, var(--color-border) 10%, var(--color-border) 90%, transparent)',
               }}
               aria-hidden="true"
             />
@@ -48,24 +44,15 @@ export function ProcessSection() {
             <StaggerWrapper
               as="ol"
               speed="slow"
-              className="flex flex-col lg:flex-row gap-0 lg:gap-8"
+              className="flex flex-col gap-0 lg:flex-row lg:gap-8"
             >
               {processSteps.map((step, index) => (
-                <AnimationWrapper
-                  key={step.step}
-                  variant="fadeUp"
-                  as="li"
-                  className="flex-1"
-                >
-                  <ProcessStep
-                    step={step}
-                    isLast={index === processSteps.length - 1}
-                  />
+                <AnimationWrapper key={step.step} variant="fadeUp" as="li" className="flex-1">
+                  <ProcessStep step={step} isLast={index === processSteps.length - 1} />
                 </AnimationWrapper>
               ))}
             </StaggerWrapper>
           </div>
-
         </div>
       </Container>
     </Section>

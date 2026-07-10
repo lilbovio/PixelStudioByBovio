@@ -19,30 +19,30 @@
 
 'use client'
 
-import { useState }             from 'react'
-import { motion }               from 'framer-motion'
-import { Menu }                 from 'lucide-react'
-import Link                     from 'next/link'
-import { useScrollY }           from '@/hooks/useScrollY'
-import { useReducedMotion }     from '@/hooks/useReducedMotion'
-import { navbarScrolled }       from '@/lib/motion'
-import { navItems, navCTA }     from '@/constants/navigation'
-import { buildWhatsAppURL }     from '@/lib/whatsapp'
-import { NavLink }              from './NavLink'
-import { MobileMenu }           from './MobileMenu'
-import { Logomark }             from '@/components/icons/Logomark'
-import { Button }               from '@/components/ui/Button'
-import { cn }                   from '@/lib/cn'
+import { useState } from 'react'
+import { motion } from 'framer-motion'
+import { Menu } from 'lucide-react'
+import Link from 'next/link'
+import { useScrollY } from '@/hooks/useScrollY'
+import { useReducedMotion } from '@/hooks/useReducedMotion'
+import { navbarScrolled } from '@/lib/motion'
+import { navItems, navCTA } from '@/constants/navigation'
+import { buildWhatsAppURL } from '@/lib/whatsapp'
+import { NavLink } from './NavLink'
+import { MobileMenu } from './MobileMenu'
+import { Logomark } from '@/components/icons/Logomark'
+import { Button } from '@/components/ui/Button'
+import { cn } from '@/lib/cn'
 
 // ─── Component ────────────────────────────────────────────────
 
 export function FloatingNavbar() {
-  const scrollY      = useScrollY()
+  const scrollY = useScrollY()
   const shouldReduce = useReducedMotion()
   const [menuOpen, setMenuOpen] = useState(false)
 
-  const hasScrolled  = scrollY > 20
-  const whatsappUrl  = buildWhatsAppURL()
+  const hasScrolled = scrollY > 20
+  const whatsappUrl = buildWhatsAppURL()
 
   return (
     <>
@@ -52,9 +52,9 @@ export function FloatingNavbar() {
         className={cn(
           'sr-only focus:not-sr-only',
           'fixed top-4 left-4 z-tooltip',
-          'bg-surface border border-border rounded-md px-4 py-2',
+          'rounded-md border border-border bg-surface px-4 py-2',
           'type-btn text-text-primary shadow-elevated',
-          'focus-visible:outline-2 focus-visible:outline-accent',
+          'focus-visible:outline-2 focus-visible:outline-accent'
         )}
       >
         Skip to main content
@@ -63,9 +63,9 @@ export function FloatingNavbar() {
       {/* ── Outer wrapper — full width, sticky ───────────────── */}
       <div
         className={cn(
-          'fixed top-0 inset-x-0 z-sticky',
+          'fixed inset-x-0 top-0 z-sticky',
           'flex justify-center',
-          'pointer-events-none', // let clicks pass through the wrapper
+          'pointer-events-none' // let clicks pass through the wrapper
         )}
       >
         {/* ── Inner nav bar — animates width + radius ──────── */}
@@ -77,33 +77,34 @@ export function FloatingNavbar() {
           className={cn(
             // Full width at top, shrinks to pill when scrolled
             'pointer-events-auto w-full',
-            'transition-all duration-normal ease-smooth',
+            'duration-normal transition-all ease-smooth',
             hasScrolled
-              ? 'mt-3 mx-4 md:mx-6 lg:mx-8 rounded-2xl glass shadow-navbar'
+              ? 'glass mx-4 mt-3 rounded-2xl shadow-navbar md:mx-6 lg:mx-8'
               : 'border-b border-transparent',
-            shouldReduce && hasScrolled && 'bg-surface/80 backdrop-blur-md border border-border/50',
+            shouldReduce && hasScrolled && 'border border-border/50 bg-surface/80 backdrop-blur-md'
           )}
         >
-          <div className={cn(
-            'mx-auto w-full px-4 sm:px-5',
-            !hasScrolled && 'max-w-container px-5 sm:px-8 lg:px-12',
-          )}>
+          <div
+            className={cn(
+              'mx-auto w-full px-4 sm:px-5',
+              !hasScrolled && 'max-w-container px-5 sm:px-8 lg:px-12'
+            )}
+          >
             <div className="flex h-14 items-center justify-between">
-
               {/* Logo */}
               <Link
                 href="/"
                 aria-label="Pixel Studio by Bovio — Home"
                 className={cn(
                   'text-[1rem] focus-visible:outline-2 focus-visible:outline-offset-4',
-                  'focus-visible:outline-accent rounded-sm',
+                  'rounded-sm focus-visible:outline-accent'
                 )}
               >
                 <Logomark variant="mark" scheme="dark" />
               </Link>
 
               {/* Desktop nav — hidden on mobile */}
-              <nav aria-label="Main navigation" className="hidden md:flex items-center gap-7">
+              <nav aria-label="Main navigation" className="hidden items-center gap-7 md:flex">
                 {navItems.map((item) => (
                   <NavLink key={item.href} href={item.href}>
                     {item.label}
@@ -131,26 +132,22 @@ export function FloatingNavbar() {
                   aria-controls="mobile-menu"
                   onClick={() => setMenuOpen(true)}
                   className={cn(
-                    'md:hidden flex items-center justify-center size-9 rounded-lg',
-                    'text-text-muted hover:text-text-primary hover:bg-bg-secondary',
-                    'transition-colors duration-fast ease-smooth',
-                    'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent',
+                    'flex size-9 items-center justify-center rounded-lg md:hidden',
+                    'text-text-muted hover:bg-bg-secondary hover:text-text-primary',
+                    'duration-fast transition-colors ease-smooth',
+                    'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent'
                   )}
                 >
                   <Menu size={18} strokeWidth={1.75} aria-hidden="true" />
                 </button>
               </div>
-
             </div>
           </div>
         </motion.header>
       </div>
 
       {/* ── Mobile menu (rendered outside nav for z-index) ─── */}
-      <MobileMenu
-        isOpen={menuOpen}
-        onClose={() => setMenuOpen(false)}
-      />
+      <MobileMenu isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
     </>
   )
 }

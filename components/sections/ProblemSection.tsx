@@ -42,14 +42,9 @@ const painPoints = [
 
 export function ProblemSection() {
   return (
-    <Section
-      id="problem"
-      variant="gray"
-      labelledBy="problem-heading"
-    >
+    <Section id="problem" variant="gray" labelledBy="problem-heading">
       <Container>
         <div className="flex flex-col gap-12">
-
           <AnimationWrapper variant="fadeUp">
             <SectionHeader
               label="The Reality"
@@ -59,25 +54,21 @@ export function ProblemSection() {
             />
           </AnimationWrapper>
 
-          <StaggerWrapper
-            as="ul"
-            speed="normal"
-            className="grid grid-cols-1 md:grid-cols-3 gap-5"
-          >
+          <StaggerWrapper as="ul" speed="normal" className="grid grid-cols-1 gap-5 md:grid-cols-3">
             {painPoints.map((point) => {
               const Icon = point.icon
               return (
                 <AnimationWrapper key={point.id} variant="fadeUp" as="li">
                   <div
                     className={cn(
-                      'flex flex-col gap-4 p-6 h-full',
-                      'bg-surface rounded-xl border border-border',
+                      'flex h-full flex-col gap-4 p-6',
+                      'rounded-xl border border-border bg-surface',
                       'shadow-soft',
                       // Left accent border
-                      'border-l-2 border-l-border-strong',
+                      'border-l-2 border-l-border-strong'
                     )}
                   >
-                    <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-bg-secondary shrink-0">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-bg-secondary">
                       <Icon
                         size={18}
                         strokeWidth={1.75}
@@ -85,18 +76,13 @@ export function ProblemSection() {
                         className="text-text-muted"
                       />
                     </div>
-                    <h3 className="type-heading-sm text-text-primary">
-                      {point.headline}
-                    </h3>
-                    <p className="type-body text-text-muted leading-relaxed">
-                      {point.body}
-                    </p>
+                    <h3 className="type-heading-sm text-text-primary">{point.headline}</h3>
+                    <p className="type-body leading-relaxed text-text-muted">{point.body}</p>
                   </div>
                 </AnimationWrapper>
               )
             })}
           </StaggerWrapper>
-
         </div>
       </Container>
     </Section>

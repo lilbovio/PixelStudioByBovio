@@ -74,21 +74,17 @@ export default function ContactPage() {
       {/* Primary contact action */}
       <Section variant="white" labelledBy="contact-action-heading">
         <Container>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-
+          <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-2 lg:gap-20">
             {/* Left — CTA block */}
             <AnimationWrapper variant="fadeUp">
               <div className="flex flex-col gap-8">
                 <div className="flex flex-col gap-3">
-                  <h2
-                    id="contact-action-heading"
-                    className="type-heading-xl text-text-primary"
-                  >
+                  <h2 id="contact-action-heading" className="type-heading-xl text-text-primary">
                     Start on WhatsApp.
                   </h2>
-                  <p className="type-body-lg text-text-muted leading-relaxed max-w-[480px]">
-                    The fastest and most direct way to reach us.
-                    A prefilled message is ready — just tap send.
+                  <p className="type-body-lg max-w-[480px] leading-relaxed text-text-muted">
+                    The fastest and most direct way to reach us. A prefilled message is ready — just
+                    tap send.
                   </p>
                 </div>
 
@@ -101,21 +97,21 @@ export default function ContactPage() {
                 />
 
                 {/* Location + response time */}
-                <div className="flex flex-col gap-3 pt-2 border-t border-border">
-                  <div className="flex items-center gap-2 type-body-sm text-text-muted">
+                <div className="flex flex-col gap-3 border-t border-border pt-2">
+                  <div className="type-body-sm flex items-center gap-2 text-text-muted">
                     <MapPin size={14} strokeWidth={1.75} aria-hidden="true" />
                     {site.location}
                   </div>
-                  <div className="flex items-center gap-2 type-body-sm text-text-muted">
+                  <div className="type-body-sm flex items-center gap-2 text-text-muted">
                     <Clock size={14} strokeWidth={1.75} aria-hidden="true" />
                     Response within 24 hours — usually faster
                   </div>
                   {site.email && (
-                    <div className="flex items-center gap-2 type-body-sm text-text-muted">
+                    <div className="type-body-sm flex items-center gap-2 text-text-muted">
                       <MessageCircle size={14} strokeWidth={1.75} aria-hidden="true" />
                       <a
                         href={`mailto:${site.email}`}
-                        className="hover:text-text-primary transition-colors duration-fast"
+                        className="duration-fast transition-colors hover:text-text-primary"
                       >
                         {site.email}
                       </a>
@@ -128,7 +124,7 @@ export default function ContactPage() {
             {/* Right — what happens next */}
             <div className="flex flex-col gap-6">
               <AnimationWrapper variant="fadeUp">
-                <h2 className="type-heading-sm text-text-muted uppercase tracking-wider">
+                <h2 className="type-heading-sm tracking-wider text-text-muted uppercase">
                   What happens next
                 </h2>
               </AnimationWrapper>
@@ -138,20 +134,25 @@ export default function ContactPage() {
                   const Icon = step.icon
                   return (
                     <AnimationWrapper key={step.title} variant="fadeUp" as="li">
-                      <div className="flex items-start gap-4 p-5 rounded-xl bg-bg-secondary border border-border">
+                      <div className="flex items-start gap-4 rounded-xl border border-border bg-bg-secondary p-5">
                         {/* Step number */}
                         <div
-                          className="flex items-center justify-center w-8 h-8 rounded-full bg-btn-primary text-text-inverse type-body-sm font-bold shrink-0"
+                          className="type-body-sm flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-btn-primary font-bold text-text-inverse"
                           aria-hidden="true"
                         >
                           {index + 1}
                         </div>
                         <div className="flex flex-col gap-1.5">
                           <div className="flex items-center gap-2">
-                            <Icon size={15} strokeWidth={1.75} className="text-text-muted shrink-0" aria-hidden="true" />
+                            <Icon
+                              size={15}
+                              strokeWidth={1.75}
+                              className="shrink-0 text-text-muted"
+                              aria-hidden="true"
+                            />
                             <h3 className="type-heading-sm text-text-primary">{step.title}</h3>
                           </div>
-                          <p className="type-body text-text-muted leading-relaxed">{step.body}</p>
+                          <p className="type-body leading-relaxed text-text-muted">{step.body}</p>
                         </div>
                       </div>
                     </AnimationWrapper>
@@ -159,7 +160,6 @@ export default function ContactPage() {
                 })}
               </StaggerWrapper>
             </div>
-
           </div>
         </Container>
       </Section>

@@ -31,11 +31,11 @@ import type { FAQItem as FAQItemType } from '@/constants/faqs'
 // ─── Types ────────────────────────────────────────────────────
 
 interface FAQItemProps {
-  item:       FAQItemType
-  isOpen:     boolean
-  onToggle:   () => void
+  item: FAQItemType
+  isOpen: boolean
+  onToggle: () => void
   /** Used for aria-labelledby/region id pairing */
-  index:      number
+  index: number
 }
 
 // ─── Component ────────────────────────────────────────────────
@@ -44,7 +44,7 @@ export function FAQItem({ item, isOpen, onToggle, index }: FAQItemProps) {
   const shouldReduce = useReducedMotion()
 
   const buttonId = `faq-btn-${index}`
-  const panelId  = `faq-panel-${index}`
+  const panelId = `faq-panel-${index}`
 
   return (
     <div className="border-b border-border last:border-b-0">
@@ -55,13 +55,13 @@ export function FAQItem({ item, isOpen, onToggle, index }: FAQItemProps) {
         aria-controls={panelId}
         onClick={onToggle}
         className={cn(
-          'group w-full flex items-center justify-between gap-4',
+          'group flex w-full items-center justify-between gap-4',
           'py-5 text-left',
           'type-heading-sm text-text-primary',
           'cursor-pointer',
-          'transition-colors duration-fast ease-smooth',
+          'duration-fast transition-colors ease-smooth',
           'hover:text-text-secondary',
-          'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 rounded-sm',
+          'rounded-sm focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:outline-none'
         )}
       >
         <span>{item.question}</span>
@@ -71,13 +71,9 @@ export function FAQItem({ item, isOpen, onToggle, index }: FAQItemProps) {
           aria-hidden="true"
           variants={shouldReduce ? undefined : faqIcon}
           animate={isOpen ? 'open' : 'closed'}
-          className="shrink-0 text-text-muted transition-colors duration-fast group-hover:text-text-secondary"
+          className="duration-fast shrink-0 text-text-muted transition-colors group-hover:text-text-secondary"
         >
-          <ChevronDown
-            size={20}
-            strokeWidth={1.75}
-            aria-hidden="true"
-          />
+          <ChevronDown size={20} strokeWidth={1.75} aria-hidden="true" />
         </motion.span>
       </button>
 
@@ -111,7 +107,7 @@ export function FAQItem({ item, isOpen, onToggle, index }: FAQItemProps) {
               initial="hidden"
               animate="visible"
               exit="exit"
-              className="type-body-lg text-text-muted pb-5 pr-10 leading-relaxed"
+              className="type-body-lg pr-10 pb-5 leading-relaxed text-text-muted"
             >
               {item.answer}
             </motion.p>

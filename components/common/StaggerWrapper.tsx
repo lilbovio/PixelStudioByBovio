@@ -31,11 +31,7 @@
 
 import { motion } from 'framer-motion'
 import { useReducedMotion } from '@/hooks/useReducedMotion'
-import {
-  staggerContainer,
-  staggerContainerFast,
-  staggerContainerSlow,
-} from '@/lib/motion'
+import { staggerContainer, staggerContainerFast, staggerContainerSlow } from '@/lib/motion'
 import { cn } from '@/lib/cn'
 import type { ReactNode } from 'react'
 import type { Variants } from 'framer-motion'
@@ -46,27 +42,27 @@ type StaggerSpeed = 'fast' | 'normal' | 'slow'
 
 interface StaggerWrapperProps {
   /** Spacing between child animations. Default: 'normal' (70ms) */
-  speed?:     StaggerSpeed
+  speed?: StaggerSpeed
   className?: string
-  children:   ReactNode
-  as?:        'div' | 'ul' | 'ol' | 'section'
+  children: ReactNode
+  as?: 'div' | 'ul' | 'ol' | 'section'
 }
 
 // ─── Variant map ──────────────────────────────────────────────
 
 const containerVariants: Record<StaggerSpeed, Variants> = {
-  fast:   staggerContainerFast,
+  fast: staggerContainerFast,
   normal: staggerContainer,
-  slow:   staggerContainerSlow,
+  slow: staggerContainerSlow,
 }
 
 // ─── Component ────────────────────────────────────────────────
 
 export function StaggerWrapper({
-  speed     = 'normal',
+  speed = 'normal',
   className,
   children,
-  as        = 'div',
+  as = 'div',
 }: StaggerWrapperProps) {
   const shouldReduce = useReducedMotion()
 

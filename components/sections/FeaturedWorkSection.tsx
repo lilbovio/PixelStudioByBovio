@@ -36,17 +36,15 @@ import type { Project } from '@/constants/projects'
 function EmptyState() {
   return (
     <AnimationWrapper variant="fadeUp">
-      <div className="flex flex-col items-center gap-6 py-16 px-8 rounded-2xl border border-dashed border-border bg-bg-secondary text-center max-w-xl mx-auto">
-        <div className="flex items-center justify-center w-14 h-14 rounded-full bg-surface border border-border text-text-muted">
+      <div className="mx-auto flex max-w-xl flex-col items-center gap-6 rounded-2xl border border-dashed border-border bg-bg-secondary px-8 py-16 text-center">
+        <div className="flex h-14 w-14 items-center justify-center rounded-full border border-border bg-surface text-text-muted">
           <Clock size={24} strokeWidth={1.5} aria-hidden="true" />
         </div>
         <div className="flex flex-col gap-2">
-          <h3 className="type-heading-sm text-text-primary">
-            Projects in progress
-          </h3>
-          <p className="type-body text-text-muted leading-relaxed">
-            We are actively building client projects. Our portfolio will be published here
-            as work is completed. In the meantime, we would love to hear about yours.
+          <h3 className="type-heading-sm text-text-primary">Projects in progress</h3>
+          <p className="type-body leading-relaxed text-text-muted">
+            We are actively building client projects. Our portfolio will be published here as work
+            is completed. In the meantime, we would love to hear about yours.
           </p>
         </div>
         <WhatsAppCTA
@@ -77,14 +75,9 @@ export function FeaturedWorkSection() {
 
   return (
     <>
-      <Section
-        id="work"
-        variant="white"
-        labelledBy="work-heading"
-      >
+      <Section id="work" variant="white" labelledBy="work-heading">
         <Container>
           <div className="flex flex-col gap-12">
-
             {/* Header */}
             <AnimationWrapper variant="fadeUp">
               <SectionHeader
@@ -104,21 +97,17 @@ export function FeaturedWorkSection() {
               <StaggerWrapper
                 as="ul"
                 speed="normal"
-                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+                className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
               >
                 {featured.map((project) => (
                   <AnimationWrapper key={project.slug} variant="scaleUp" as="li">
-                    <ProjectCard
-                      project={project}
-                      onOpen={handleOpen}
-                    />
+                    <ProjectCard project={project} onOpen={handleOpen} />
                   </AnimationWrapper>
                 ))}
               </StaggerWrapper>
             ) : (
               <EmptyState />
             )}
-
           </div>
         </Container>
       </Section>

@@ -47,7 +47,9 @@ export function DynamicIcon({ name, ...props }: DynamicIconProps) {
   // lucide-react exports icons as named exports — access via index
   // Double-cast through unknown to satisfy strict TS: LucideIcons' own types
   // don't match the generic ComponentType<LucideProps> index signature exactly.
-  const Icon = (LucideIcons as unknown as Record<string, React.ComponentType<LucideProps>>)[pascalName]
+  const Icon = (LucideIcons as unknown as Record<string, React.ComponentType<LucideProps>>)[
+    pascalName
+  ]
 
   if (!Icon) return null
 

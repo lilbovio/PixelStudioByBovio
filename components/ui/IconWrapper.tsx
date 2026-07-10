@@ -24,16 +24,16 @@ import type { ReactNode } from 'react'
 
 // ─── Types ────────────────────────────────────────────────────
 
-type IconWrapperSize    = 'sm' | 'md' | 'lg' | 'xl'
+type IconWrapperSize = 'sm' | 'md' | 'lg' | 'xl'
 type IconWrapperVariant = 'plain' | 'soft' | 'outline'
 
 interface IconWrapperProps {
-  size?:      IconWrapperSize
-  variant?:   IconWrapperVariant
+  size?: IconWrapperSize
+  variant?: IconWrapperVariant
   /** Override color class for the icon. Defaults to text-text-muted */
-  color?:     string
+  color?: string
   className?: string
-  children:   ReactNode
+  children: ReactNode
 }
 
 // ─── Styles ───────────────────────────────────────────────────
@@ -46,24 +46,24 @@ const sizes: Record<IconWrapperSize, string> = {
 }
 
 const variants: Record<IconWrapperVariant, string> = {
-  plain:   'bg-transparent',
-  soft:    'bg-bg-secondary rounded-md',
+  plain: 'bg-transparent',
+  soft: 'bg-bg-secondary rounded-md',
   outline: 'bg-surface border border-border rounded-md',
 }
 
 // ─── Component ────────────────────────────────────────────────
 
 export function IconWrapper({
-  size    = 'md',
+  size = 'md',
   variant = 'plain',
-  color   = 'text-text-secondary',
+  color = 'text-text-secondary',
   className,
   children,
 }: IconWrapperProps) {
   return (
     <div
       className={cn(
-        'flex items-center justify-center shrink-0',
+        'flex shrink-0 items-center justify-center',
         sizes[size],
         variants[variant],
         color,

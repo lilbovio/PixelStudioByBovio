@@ -11,16 +11,16 @@
  *   social sharing previews include the brand name.
  */
 
-const SITE_URL  = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://pixelstudiobybovio.lat'
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://pixelstudiobybovio.lat'
 const SITE_NAME = 'Pixel Studio by Bovio'
 const BRAND_SUFFIX = ' — Pixel Studio by Bovio'
 const DEFAULT_OG_IMAGE = '/og/default.svg'
 
 interface PageMetaOptions {
-  title:       string
+  title: string
   description: string
-  path:        string
-  ogImage?:    string
+  path: string
+  ogImage?: string
 }
 
 /**
@@ -32,8 +32,8 @@ interface PageMetaOptions {
  * @param ogImage     Optional override for the OG image.
  */
 export function buildPageMetadata({ title, description, path, ogImage }: PageMetaOptions) {
-  const url       = `${SITE_URL}${path}`
-  const image     = ogImage ?? DEFAULT_OG_IMAGE
+  const url = `${SITE_URL}${path}`
+  const image = ogImage ?? DEFAULT_OG_IMAGE
   // OG/Twitter always show the fully decorated title with brand name
   const fullTitle = title.includes(SITE_NAME) ? title : `${title}${BRAND_SUFFIX}`
 
@@ -42,18 +42,18 @@ export function buildPageMetadata({ title, description, path, ogImage }: PageMet
     description,
     alternates: { canonical: url },
     openGraph: {
-      type:        'website' as const,
+      type: 'website' as const,
       url,
-      siteName:    SITE_NAME,
-      title:       fullTitle,
+      siteName: SITE_NAME,
+      title: fullTitle,
       description,
-      images:      [{ url: image, width: 1200, height: 630, alt: fullTitle }],
+      images: [{ url: image, width: 1200, height: 630, alt: fullTitle }],
     },
     twitter: {
-      card:        'summary_large_image' as const,
-      title:       fullTitle,
+      card: 'summary_large_image' as const,
+      title: fullTitle,
       description,
-      images:      [image],
+      images: [image],
     },
   }
 }

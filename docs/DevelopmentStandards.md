@@ -11,6 +11,7 @@ Write code that another senior engineer would enjoy maintaining.
 Every file. Every function. Every component. Should communicate craftsmanship.
 
 **Rules:**
+
 - Readable code is more valuable than clever code
 - Optimize for maintainability, not cleverness
 - The smallest change that solves the problem
@@ -26,12 +27,13 @@ Every file. Every function. Every component. Should communicate craftsmanship.
   "compilerOptions": {
     "strict": true,
     "noUncheckedIndexedAccess": true,
-    "exactOptionalPropertyTypes": true
-  }
+    "exactOptionalPropertyTypes": true,
+  },
 }
 ```
 
 **Rules:**
+
 - `strict: true` — no exceptions
 - No `any` types — use `unknown` + type narrowing
 - No type assertions (`as Type`) unless genuinely required
@@ -60,15 +62,12 @@ interface ServiceCardProps {
 
 // ─── Component ────────────────────────────────────────────────
 export function ServiceCard({ service, className }: ServiceCardProps) {
-  return (
-    <article className={cn('...', className)}>
-      {/* ... */}
-    </article>
-  )
+  return <article className={cn('...', className)}>{/* ... */}</article>
 }
 ```
 
 **Rules:**
+
 - One component per file
 - Named exports (never default exports for components)
 - Types defined at top of file
@@ -81,6 +80,7 @@ export function ServiceCard({ service, className }: ServiceCardProps) {
 ## 4. "use client" Policy
 
 Add `"use client"` only when the component genuinely requires it:
+
 - Uses `useState`, `useEffect`, `useRef`, `useContext`
 - Uses Framer Motion `motion.*` elements or `useReducedMotion`
 - Responds to browser events (scroll, click with state)
@@ -94,16 +94,16 @@ When a parent needs to pass a Client Component into a Server Component, pass it 
 
 ## 5. Naming Conventions
 
-| Item | Convention | Example |
-|---|---|---|
-| Components | PascalCase | `ServiceCard.tsx` |
-| Hooks | camelCase with `use` prefix | `useScrollProgress.ts` |
-| Utilities | camelCase | `buildWhatsAppURL.ts` |
-| Constants | camelCase for variables, UPPER_SNAKE for fixed values | `services`, `SITE_URL` |
-| CSS classes | Tailwind utilities | `flex items-center gap-4` |
-| Types/Interfaces | PascalCase | `Service`, `Project`, `FAQItem` |
-| Event handlers | `handle` prefix | `handleSubmit`, `handleToggle` |
-| Boolean props | `is` / `has` prefix | `isLoading`, `hasError` |
+| Item             | Convention                                            | Example                         |
+| ---------------- | ----------------------------------------------------- | ------------------------------- |
+| Components       | PascalCase                                            | `ServiceCard.tsx`               |
+| Hooks            | camelCase with `use` prefix                           | `useScrollProgress.ts`          |
+| Utilities        | camelCase                                             | `buildWhatsAppURL.ts`           |
+| Constants        | camelCase for variables, UPPER_SNAKE for fixed values | `services`, `SITE_URL`          |
+| CSS classes      | Tailwind utilities                                    | `flex items-center gap-4`       |
+| Types/Interfaces | PascalCase                                            | `Service`, `Project`, `FAQItem` |
+| Event handlers   | `handle` prefix                                       | `handleSubmit`, `handleToggle`  |
+| Boolean props    | `is` / `has` prefix                                   | `isLoading`, `hasError`         |
 
 ---
 
@@ -201,6 +201,7 @@ Injected in root layout:
 ```
 
 Schemas required at launch:
+
 - `Organization` (root layout)
 - `WebSite` with `SearchAction` (root layout)
 - `Service` (services page)
@@ -214,9 +215,9 @@ import { projects } from '@/constants/projects'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = ['/', '/services', '/work', '/process', '/about', '/contact']
-  const projectRoutes = projects.map(p => `/work/${p.slug}`)
-  
-  return [...staticRoutes, ...projectRoutes].map(url => ({
+  const projectRoutes = projects.map((p) => `/work/${p.slug}`)
+
+  return [...staticRoutes, ...projectRoutes].map((url) => ({
     url: `https://pixelbybovio.com${url}`,
     lastModified: new Date(),
     changeFrequency: 'monthly',
@@ -245,6 +246,7 @@ export default function robots(): MetadataRoute.Robots {
 ### Images
 
 All images use `next/image`:
+
 ```tsx
 <Image
   src="/images/projects/coffee-shop.webp"
@@ -292,6 +294,7 @@ import { GeistSans } from 'geist/font/sans'
 ### Animation Performance
 
 Only animate GPU-friendly properties:
+
 - ✓ `opacity`
 - ✓ `transform` (translate, scale, rotate)
 - ✓ `filter` (blur — use sparingly)
@@ -315,7 +318,7 @@ export const services: Service[] = [
     name: 'Landing Pages',
     description: 'Beautiful high-converting landing pages designed to capture leads...',
     outcome: 'Generate qualified leads and grow your customer base.',
-    icon: 'layout',  // Lucide icon name
+    icon: 'layout', // Lucide icon name
   },
   // ...
 ]
@@ -374,7 +377,9 @@ export default function NotFound() {
             headline="Page not found."
             subheadline="The page you're looking for doesn't exist. Let's get you back on track."
           />
-          <Button href="/" variant="primary">Back to home</Button>
+          <Button href="/" variant="primary">
+            Back to home
+          </Button>
         </Container>
       </Section>
     </main>
@@ -383,6 +388,7 @@ export default function NotFound() {
 ```
 
 Rules:
+
 - `not-found.tsx` — always branded, never plain text
 - `error.tsx` — Client Component boundary for runtime errors
 - Missing images — handled gracefully by `next/image` fallback
@@ -449,6 +455,7 @@ SANITY_API_TOKEN=
 ## 15. Git Workflow
 
 ### Branch Naming
+
 ```
 main                   — production
 feature/hero-section   — new features
@@ -457,6 +464,7 @@ chore/update-deps      — maintenance
 ```
 
 ### Commit Messages (Conventional Commits)
+
 ```
 feat: add hero section entrance animation
 fix: correct mobile menu focus trap
@@ -501,28 +509,33 @@ pnpm analyze
 ## 17. How-to Reference
 
 ### Add a New Service
+
 1. Open `types/service.ts` — verify the `Service` interface covers your needs
 2. Open `constants/services.ts` — add a new object to the `services` array
 3. Choose a Lucide icon name for the `icon` field
 4. The `ServicesSection` component renders automatically — no markup changes
 
 ### Add a New Project
+
 1. Add project images to `public/images/projects/[project-name]/`
 2. Open `constants/projects.ts` — add a new `Project` object with a unique `slug`
 3. The `/work` gallery and sitemap update automatically
 
 ### Update Contact Information
+
 1. Open `constants/site.ts`
 2. Update the relevant field (`whatsappNumber`, `email`, `location`, etc.)
 3. All components that reference these values update automatically
 
 ### Add a New Page
+
 1. Create `app/[page-name]/page.tsx`
 2. Export a `generateMetadata()` function
 3. Add the route to `constants/navigation.ts` if it should appear in the nav
 4. The sitemap picks it up automatically if added to `app/sitemap.ts`
 
 ### Update Navigation
+
 1. Open `constants/navigation.ts`
 2. Add, remove, or reorder items
 3. Both `FloatingNavbar` and `MobileMenu` render from this same array
@@ -532,6 +545,7 @@ pnpm analyze
 ## 18. Pre-Launch Checklist
 
 ### Visual
+
 - [ ] All sections render correctly at 320px, 768px, 1024px, 1280px, 1920px
 - [ ] Typography hierarchy is consistent across all pages
 - [ ] Spacing follows the 8px system throughout
@@ -541,6 +555,7 @@ pnpm analyze
 - [ ] Loading states are implemented for async interactions
 
 ### Accessibility
+
 - [ ] `axe` browser extension passes with 0 errors
 - [ ] Tab navigation visits every interactive element in logical order
 - [ ] All images have descriptive `alt` text
@@ -551,6 +566,7 @@ pnpm analyze
 - [ ] Mobile menu has focus trap
 
 ### Performance
+
 - [ ] Lighthouse Performance ≥ 95 on mobile
 - [ ] Lighthouse Accessibility = 100
 - [ ] Lighthouse Best Practices = 100
@@ -560,6 +576,7 @@ pnpm analyze
 - [ ] No console errors in production build
 
 ### SEO
+
 - [ ] Every page has unique `<title>` and `<meta name="description">`
 - [ ] Every page has canonical URL
 - [ ] Every page has OG and Twitter metadata
@@ -570,6 +587,7 @@ pnpm analyze
 - [ ] All images have alt text
 
 ### Functionality
+
 - [ ] All WhatsApp links open correctly with prefilled message
 - [ ] Email link works
 - [ ] All navigation links work

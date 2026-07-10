@@ -60,7 +60,7 @@ export async function generateMetadata({
 function PaletteSwatch({ color }: { color: string }) {
   return (
     <div
-      className="w-10 h-10 rounded-lg border border-border shadow-soft shrink-0"
+      className="h-10 w-10 shrink-0 rounded-lg border border-border shadow-soft"
       style={{ backgroundColor: color }}
       title={color}
       aria-label={color}
@@ -70,11 +70,7 @@ function PaletteSwatch({ color }: { color: string }) {
 
 // ─── Page ─────────────────────────────────────────────────────
 
-export default async function WorkSlugPage({
-  params,
-}: {
-  params: Promise<{ slug: string }>
-}) {
+export default async function WorkSlugPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
   const project = projects.find((p) => p.slug === slug)
   if (!project) notFound()
@@ -86,53 +82,55 @@ export default async function WorkSlugPage({
         <Container>
           <AnimationWrapper variant="fadeUp">
             <div className="flex flex-col gap-8">
-
               {/* Back navigation */}
               <Link
                 href="/work"
-                className="inline-flex items-center gap-2 type-body-sm text-text-muted hover:text-text-primary transition-colors duration-fast group"
+                className="type-body-sm duration-fast group inline-flex items-center gap-2 text-text-muted transition-colors hover:text-text-primary"
               >
                 <ArrowLeft
                   size={15}
                   strokeWidth={1.75}
                   aria-hidden="true"
-                  className="group-hover:-translate-x-0.5 transition-transform duration-fast"
+                  className="duration-fast transition-transform group-hover:-translate-x-0.5"
                 />
                 All projects
               </Link>
 
               {/* Header */}
-              <div className="flex flex-col gap-4 max-w-[680px]">
+              <div className="flex max-w-[680px] flex-col gap-4">
                 <div className="flex flex-wrap items-center gap-2">
-                  <Badge variant="default" size="md">{project.industry}</Badge>
+                  <Badge variant="default" size="md">
+                    {project.industry}
+                  </Badge>
                   {project.isConceptProject && (
-                    <Badge variant="accent" size="md">Design Concept</Badge>
+                    <Badge variant="accent" size="md">
+                      Design Concept
+                    </Badge>
                   )}
                 </div>
 
-                <h1
-                  id="project-title"
-                  className="type-display text-text-primary"
-                >
+                <h1 id="project-title" className="type-display text-text-primary">
                   {project.title}
                 </h1>
 
-                <p className="type-body-lg text-text-muted leading-relaxed">
+                <p className="type-body-lg leading-relaxed text-text-muted">
                   {project.description}
                 </p>
               </div>
 
               {/* Tags */}
-              {project.tags.filter(t => t !== 'Design Concept').length > 0 && (
+              {project.tags.filter((t) => t !== 'Design Concept').length > 0 && (
                 <div className="flex flex-wrap gap-2">
-                  {project.tags.filter(t => t !== 'Design Concept').map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-3 py-1.5 rounded-full bg-bg-secondary border border-border type-body-sm text-text-muted"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+                  {project.tags
+                    .filter((t) => t !== 'Design Concept')
+                    .map((tag) => (
+                      <span
+                        key={tag}
+                        className="type-body-sm rounded-full border border-border bg-bg-secondary px-3 py-1.5 text-text-muted"
+                      >
+                        {tag}
+                      </span>
+                    ))}
                 </div>
               )}
             </div>
@@ -143,7 +141,7 @@ export default async function WorkSlugPage({
       {/* ── Cover image ───────────────────────────────────────── */}
       <Section variant="gray" padding="none">
         <AnimationWrapper variant="fadeIn">
-          <div className="relative w-full aspect-video bg-bg-tertiary overflow-hidden">
+          <div className="relative aspect-video w-full overflow-hidden bg-bg-tertiary">
             {project.coverImage ? (
               <Image
                 src={project.coverImage}
@@ -173,18 +171,14 @@ export default async function WorkSlugPage({
       {/* ── Project detail ────────────────────────────────────── */}
       <Section variant="white" labelledBy="project-title">
         <Container>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
-
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-3 lg:gap-16">
             {/* Left — main content */}
-            <div className="lg:col-span-2 flex flex-col gap-12">
-
+            <div className="flex flex-col gap-12 lg:col-span-2">
               {/* Business goal */}
               <AnimationWrapper variant="fadeUp">
                 <div className="flex flex-col gap-4">
                   <h2 className="type-heading-md text-text-primary">Business Goal</h2>
-                  <p className="type-body-lg text-text-muted leading-relaxed">
-                    {project.goal}
-                  </p>
+                  <p className="type-body-lg leading-relaxed text-text-muted">{project.goal}</p>
                 </div>
               </AnimationWrapper>
 
@@ -196,8 +190,13 @@ export default async function WorkSlugPage({
                     <StaggerWrapper as="ul" speed="fast" className="flex flex-col gap-3">
                       {project.features.map((feature) => (
                         <AnimationWrapper key={feature} variant="fadeUp" as="li">
-                          <div className="flex items-start gap-3 p-4 rounded-xl bg-bg-secondary border border-border">
-                            <span className="text-accent mt-0.5 shrink-0 select-none" aria-hidden="true">·</span>
+                          <div className="flex items-start gap-3 rounded-xl border border-border bg-bg-secondary p-4">
+                            <span
+                              className="mt-0.5 shrink-0 text-accent select-none"
+                              aria-hidden="true"
+                            >
+                              ·
+                            </span>
                             <p className="type-body text-text-secondary">{feature}</p>
                           </div>
                         </AnimationWrapper>
@@ -212,24 +211,22 @@ export default async function WorkSlugPage({
                 <AnimationWrapper variant="fadeUp" delay={0.05}>
                   <div className="flex flex-col gap-4">
                     <h2 className="type-heading-md text-text-primary">Mobile View</h2>
-                    <div className="overflow-hidden rounded-xl bg-bg-secondary border border-border max-w-[200px]">
+                    <div className="max-w-[200px] overflow-hidden rounded-xl border border-border bg-bg-secondary">
                       <Image
                         src={project.mobileImage}
                         alt={`${project.title} — mobile preview`}
                         width={200}
                         height={400}
-                        className="w-full h-auto"
+                        className="h-auto w-full"
                       />
                     </div>
                   </div>
                 </AnimationWrapper>
               )}
-
             </div>
 
             {/* Right — metadata sidebar */}
             <div className="flex flex-col gap-8">
-
               {/* Color palette */}
               {project.palette && project.palette.length > 0 && (
                 <AnimationWrapper variant="fadeUp">
@@ -244,7 +241,7 @@ export default async function WorkSlugPage({
                       {project.palette.map((color) => (
                         <code
                           key={color}
-                          className="type-body-sm text-text-muted bg-bg-secondary px-2 py-1 rounded-md border border-border"
+                          className="type-body-sm rounded-md border border-border bg-bg-secondary px-2 py-1 text-text-muted"
                         >
                           {color}
                         </code>
@@ -256,7 +253,7 @@ export default async function WorkSlugPage({
 
               {/* CTA */}
               <AnimationWrapper variant="fadeUp" delay={0.1}>
-                <div className="flex flex-col gap-4 p-6 rounded-xl bg-bg-secondary border border-border">
+                <div className="flex flex-col gap-4 rounded-xl border border-border bg-bg-secondary p-6">
                   <p className="type-heading-sm text-text-primary">
                     Interested in a similar project?
                   </p>
@@ -277,7 +274,6 @@ export default async function WorkSlugPage({
                   ← Back to all projects
                 </Button>
               </AnimationWrapper>
-
             </div>
           </div>
         </Container>

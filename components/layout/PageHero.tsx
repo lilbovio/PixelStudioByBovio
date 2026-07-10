@@ -23,23 +23,17 @@ import type { ReactNode } from 'react'
 
 interface PageHeroProps {
   /** Eyebrow badge above the headline */
-  label:        string
-  headline:     string
+  label: string
+  headline: string
   subheadline?: string | ReactNode
   /** id for the h1 — used with Section labelledBy for accessibility */
-  headingId:    string
-  className?:   string
+  headingId: string
+  className?: string
 }
 
 // ─── Component ────────────────────────────────────────────────
 
-export function PageHero({
-  label,
-  headline,
-  subheadline,
-  headingId,
-  className,
-}: PageHeroProps) {
+export function PageHero({ label, headline, subheadline, headingId, className }: PageHeroProps) {
   return (
     <Section
       variant="white"
@@ -49,15 +43,17 @@ export function PageHero({
     >
       <Container>
         <AnimationWrapper variant="blurUp">
-          <div className="flex flex-col gap-5 max-w-[720px]">
-            <Badge variant="default" size="md">{label}</Badge>
+          <div className="flex max-w-[720px] flex-col gap-5">
+            <Badge variant="default" size="md">
+              {label}
+            </Badge>
 
             <Heading level={1} size="display" id={headingId}>
               {headline}
             </Heading>
 
             {subheadline && (
-              <p className="type-body-lg text-text-muted leading-relaxed max-w-[600px]">
+              <p className="type-body-lg max-w-[600px] leading-relaxed text-text-muted">
                 {subheadline}
               </p>
             )}

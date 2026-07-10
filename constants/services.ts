@@ -54,8 +54,7 @@ export const services: Service[] = [
   {
     id: 'maintenance',
     name: 'Website Maintenance',
-    description:
-      'Continuous updates, monitoring, optimization and technical support after launch.',
+    description: 'Continuous updates, monitoring, optimization and technical support after launch.',
     outcome: 'Your website stays fast, secure and up to date.',
     icon: 'shield-check',
   },
@@ -70,8 +69,7 @@ export const services: Service[] = [
   {
     id: 'analytics',
     name: 'Analytics Integration',
-    description:
-      'Understand visitor behavior and make data-driven business decisions.',
+    description: 'Understand visitor behavior and make data-driven business decisions.',
     outcome: 'Know exactly what is and is not working on your website.',
     icon: 'bar-chart-3',
   },

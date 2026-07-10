@@ -8,6 +8,7 @@
 ## 1. Philosophy
 
 Every animation must earn its existence by fulfilling one of these purposes:
+
 1. **Guide attention** — direct the eye to the most important element
 2. **Reduce cognitive load** — make state transitions feel natural and predictable
 3. **Reinforce hierarchy** — communicate that some things are more important than others
@@ -23,14 +24,14 @@ If a visitor's first thought is "this has great animations" instead of "this fee
 
 All durations are drawn from this scale. No arbitrary values.
 
-| Name | Duration | Usage |
-|---|---|---|
-| `duration-instant` | 100ms | Immediate micro-feedback (button press) |
-| `duration-fast` | 150ms | Hover state transitions, focus rings |
-| `duration-normal` | 240ms | Standard UI transitions (nav links, card hover) |
-| `duration-medium` | 350ms | Scroll reveal, panel open/close |
-| `duration-slow` | 500ms | Page load entrance, image reveal |
-| `duration-deliberate` | 700ms | Hero stagger sequence, modal enter |
+| Name                  | Duration | Usage                                           |
+| --------------------- | -------- | ----------------------------------------------- |
+| `duration-instant`    | 100ms    | Immediate micro-feedback (button press)         |
+| `duration-fast`       | 150ms    | Hover state transitions, focus rings            |
+| `duration-normal`     | 240ms    | Standard UI transitions (nav links, card hover) |
+| `duration-medium`     | 350ms    | Scroll reveal, panel open/close                 |
+| `duration-slow`       | 500ms    | Page load entrance, image reveal                |
+| `duration-deliberate` | 700ms    | Hero stagger sequence, modal enter              |
 
 ---
 
@@ -38,13 +39,13 @@ All durations are drawn from this scale. No arbitrary values.
 
 No linear transitions. Every animation uses one of these curves.
 
-| Name | CSS / Framer Value | Usage |
-|---|---|---|
-| `ease-smooth` | `[0.25, 0.46, 0.45, 0.94]` | General UI transitions |
-| `ease-out-expo` | `[0.16, 1, 0.3, 1]` | Scroll reveals — fast start, gentle landing |
-| `ease-out-back` | `[0.34, 1.56, 0.64, 1]` | Avoid. Too playful for this brand. |
-| `ease-in-out` | `[0.4, 0, 0.2, 1]` | Panel open/close, modal transitions |
-| `ease-spring` | `{ type: "spring", stiffness: 260, damping: 30 }` | Button press, card hover |
+| Name            | CSS / Framer Value                                | Usage                                       |
+| --------------- | ------------------------------------------------- | ------------------------------------------- |
+| `ease-smooth`   | `[0.25, 0.46, 0.45, 0.94]`                        | General UI transitions                      |
+| `ease-out-expo` | `[0.16, 1, 0.3, 1]`                               | Scroll reveals — fast start, gentle landing |
+| `ease-out-back` | `[0.34, 1.56, 0.64, 1]`                           | Avoid. Too playful for this brand.          |
+| `ease-in-out`   | `[0.4, 0, 0.2, 1]`                                | Panel open/close, modal transitions         |
+| `ease-spring`   | `{ type: "spring", stiffness: 260, damping: 30 }` | Button press, card hover                    |
 
 **Default easing for scroll reveals:** `ease-out-expo`. Animations feel physical — fast initial movement that settles gently into place.
 
@@ -55,40 +56,52 @@ No linear transitions. Every animation uses one of these curves.
 These are the core animation presets, implemented as Framer Motion `variants` objects in `components/common/AnimationWrapper.tsx`.
 
 ### `fadeUp`
+
 The primary entrance animation for text and cards.
+
 ```json
 {
   "hidden": { "opacity": 0, "y": 20, "filter": "blur(4px)" },
-  "visible": { "opacity": 1, "y": 0, "filter": "blur(0px)",
+  "visible": {
+    "opacity": 1,
+    "y": 0,
+    "filter": "blur(0px)",
     "transition": { "duration": 0.5, "ease": [0.16, 1, 0.3, 1] }
   }
 }
 ```
 
 ### `fadeIn`
+
 For elements that should not move, only appear.
+
 ```json
 {
   "hidden": { "opacity": 0 },
-  "visible": { "opacity": 1,
-    "transition": { "duration": 0.35, "ease": [0.25, 0.46, 0.45, 0.94] }
-  }
+  "visible": { "opacity": 1, "transition": { "duration": 0.35, "ease": [0.25, 0.46, 0.45, 0.94] } }
 }
 ```
 
 ### `blurUp`
+
 For hero elements and large images — slight movement with blur reduction.
+
 ```json
 {
   "hidden": { "opacity": 0, "y": 30, "filter": "blur(8px)" },
-  "visible": { "opacity": 1, "y": 0, "filter": "blur(0px)",
+  "visible": {
+    "opacity": 1,
+    "y": 0,
+    "filter": "blur(0px)",
     "transition": { "duration": 0.7, "ease": [0.16, 1, 0.3, 1] }
   }
 }
 ```
 
 ### `staggerContainer`
+
 Parent wrapper that drives stagger timing for child elements.
+
 ```json
 {
   "hidden": {},
@@ -107,6 +120,7 @@ Parent wrapper that drives stagger timing for child elements.
 The page should never appear instantly. Content settles into place.
 
 Sequence:
+
 1. **Navigation bar** fades in at `delay: 0ms`
 2. **Hero headline** appears at `delay: 100ms` — `blurUp` variant
 3. **Hero paragraph** appears at `delay: 220ms` — `fadeUp` variant
@@ -123,38 +137,42 @@ The hero headline receives the most attention through being first and having the
 All sections below the fold use scroll-triggered entrance animations via `AnimationWrapper`. The Intersection Observer threshold is `0.15` — the animation triggers when 15% of the element is visible.
 
 **Rules:**
+
 - Each section animates **once only** — `once: true` in `whileInView`
 - No re-animation when scrolling back upward
 - Sections animate in full, not piece by piece at the section level
 
 **Per-section behavior:**
 
-| Section | Type | Stagger |
-|---|---|---|
-| Trust Badges | `fadeIn` | 60ms |
-| Problem cards | `fadeUp` | 70ms |
-| Solution points | `fadeUp` | 80ms |
-| Service cards | `fadeUp` | 70ms |
-| Project cards | `fadeUp` | 80ms |
-| Process steps | `fadeUp` | 100ms |
-| Why Us cards | `fadeUp` | 70ms |
-| FAQ items | `fadeUp` | 50ms |
-| Final CTA | `blurUp` | n/a |
+| Section         | Type     | Stagger |
+| --------------- | -------- | ------- |
+| Trust Badges    | `fadeIn` | 60ms    |
+| Problem cards   | `fadeUp` | 70ms    |
+| Solution points | `fadeUp` | 80ms    |
+| Service cards   | `fadeUp` | 70ms    |
+| Project cards   | `fadeUp` | 80ms    |
+| Process steps   | `fadeUp` | 100ms   |
+| Why Us cards    | `fadeUp` | 70ms    |
+| FAQ items       | `fadeUp` | 50ms    |
+| Final CTA       | `blurUp` | n/a     |
 
 ---
 
 ## 7. Hover Interactions
 
 ### Card Hover
+
 ```
 transform: translateY(-4px)
 box-shadow: var(--shadow-medium)
 border-color: rgba(0,0,0,0.08)
 transition: all 240ms ease-smooth
 ```
+
 Cards lift 4px. Shadow deepens. Border becomes slightly more visible. Never more than 4px movement — keeps the feeling refined.
 
 ### Button: Primary
+
 ```
 Default → Hover:
   background: slightly lighter charcoal
@@ -172,6 +190,7 @@ Active → Release:
 ```
 
 ### Button: Secondary
+
 ```
 Default → Hover:
   background: rgba(0,0,0,0.04)
@@ -180,6 +199,7 @@ Default → Hover:
 ```
 
 ### Navigation Links
+
 ```
 Default → Hover:
   color: var(--color-text-primary) (from muted)
@@ -188,6 +208,7 @@ Default → Hover:
 ```
 
 ### Project Card Hover
+
 ```
 Image: translateY(-8px) over 250ms
 Overlay: opacity 0 → 0.6 over 250ms
@@ -197,6 +218,7 @@ cursor: pointer
 ```
 
 ### Glass Nav (scroll behavior)
+
 ```
 Scroll position 0:
   background: transparent
@@ -253,12 +275,14 @@ Always reserve image dimensions with `width` and `height` to prevent CLS. Images
 ## 10. Loading States
 
 ### Skeleton Loader
+
 Animated shimmer from left to right over 1.4s, infinite.
+
 ```css
 background: linear-gradient(
   90deg,
   var(--color-bg-tertiary) 25%,
-  rgba(229,231,235,0.7) 50%,
+  rgba(229, 231, 235, 0.7) 50%,
   var(--color-bg-tertiary) 75%
 );
 background-size: 200% 100%;
@@ -272,6 +296,7 @@ Shimmer speed: 1.4s (not fast — fast shimmer feels anxious).
 ## 11. Form Interactions
 
 ### Input Focus
+
 ```
 Default:
   border: 1px solid var(--color-border)
@@ -284,6 +309,7 @@ Focus:
 ```
 
 ### Validation
+
 ```
 Error state:
   border: 1px solid var(--color-error)
@@ -301,6 +327,7 @@ Error message:
 ## 12. Success & Error States
 
 ### Form Success
+
 ```
 Sequence:
 1. Button shows spinner (loading state)
@@ -312,7 +339,9 @@ Sequence:
 ```
 
 ### Toast Notifications
+
 If used (clipboard copy, etc.):
+
 ```
 Enter: translateY(16px → 0) + opacity (0 → 1), 300ms ease-out-expo
 Exit: opacity (1 → 0), 200ms ease-smooth
@@ -327,10 +356,12 @@ Position: bottom-center on mobile, bottom-right on desktop
 Used sparingly. Only in hero section and possibly solution section.
 
 **Approved background effects:**
+
 - Soft floating gradient blob: `opacity: 0.06–0.12`, `blur: 80px`, movement speed < 8s per cycle
 - Subtle noise texture: static, `opacity: 0.02–0.04`
 
 **Never:**
+
 - Particle systems
 - Continuous gradient animations at > 0.1 opacity
 - Anything that distracts from reading
@@ -340,6 +371,7 @@ Used sparingly. Only in hero section and possibly solution section.
 ## 14. Parallax
 
 Used only for:
+
 - Hero background abstract shape (movement ratio: 0.15 — very subtle)
 - Large section background accents
 
@@ -352,15 +384,18 @@ Maximum scroll multiplier: `0.2`. If the visitor moves 100px, the background mov
 All animations respect `prefers-reduced-motion: reduce`.
 
 **`AnimationWrapper` behavior when reduced motion is detected:**
+
 - Removes all `y` translation properties
 - Removes all `filter` / `blur` properties
 - Keeps `opacity` transitions (they remain smooth but not jarring)
 - Reduces all durations to `150ms`
 
 **`StaggerWrapper` behavior:**
+
 - Stagger delay → 0ms (all items appear simultaneously)
 
 **Navigation glass effect:**
+
 - Still transitions background, but without blur (`backdrop-filter: none`)
 
 The site remains fully functional and visually complete with motion disabled.

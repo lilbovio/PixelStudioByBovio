@@ -25,46 +25,42 @@ export function FinalCTASection() {
     >
       {/* Ambient glow — very subtle, centered, deep blue */}
       <div
-        className="absolute inset-0 pointer-events-none"
+        className="pointer-events-none absolute inset-0"
         style={{
-          background: 'radial-gradient(ellipse 60% 50% at 50% 100%, rgba(29,78,216,0.10) 0%, transparent 70%)',
+          background:
+            'radial-gradient(ellipse 60% 50% at 50% 100%, rgba(29,78,216,0.10) 0%, transparent 70%)',
         }}
         aria-hidden="true"
       />
 
       <Container className="relative">
-        <div className="flex flex-col items-center gap-10 text-center max-w-[680px] mx-auto">
-
+        <div className="mx-auto flex max-w-[680px] flex-col items-center gap-10 text-center">
           {/* Eyebrow */}
           <AnimationWrapper variant="fadeIn">
-            <span className="inline-flex items-center gap-2 type-label text-white/35">
-              <span className="w-1.5 h-1.5 rounded-full bg-white/25" aria-hidden="true" />
+            <span className="type-label inline-flex items-center gap-2 text-white/35">
+              <span className="h-1.5 w-1.5 rounded-full bg-white/25" aria-hidden="true" />
               Let&apos;s work together
             </span>
           </AnimationWrapper>
 
           {/* Headline */}
           <AnimationWrapper variant="blurUp">
-            <h2
-              id="cta-heading"
-              className="type-display text-text-inverse"
-            >
+            <h2 id="cta-heading" className="type-display text-text-inverse">
               Your next customer is already searching online.
             </h2>
           </AnimationWrapper>
 
           {/* Subheadline */}
           <AnimationWrapper variant="fadeUp" delay={0.1}>
-            <p className="type-body-lg text-white/50 max-w-[520px]">
-              Whether you are launching a new business or improving an existing one,
-              we are ready to build a website that represents your brand with clarity
-              and quality.
+            <p className="type-body-lg max-w-[520px] text-white/50">
+              Whether you are launching a new business or improving an existing one, we are ready to
+              build a website that represents your brand with clarity and quality.
             </p>
           </AnimationWrapper>
 
           {/* CTAs */}
           <AnimationWrapper variant="fadeUp" delay={0.2}>
-            <div className="flex flex-col sm:flex-row gap-3 items-center justify-center">
+            <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
               <WhatsAppCTA
                 label="Start on WhatsApp"
                 size="lg"
@@ -90,7 +86,6 @@ export function FinalCTASection() {
               Free consultation · No commitment · Based in Guadalajara, Mexico
             </p>
           </AnimationWrapper>
-
         </div>
       </Container>
     </Section>

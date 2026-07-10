@@ -18,20 +18,20 @@
 'use client'
 
 import { AnimatePresence, motion } from 'framer-motion'
-import { MessageCircle }           from 'lucide-react'
-import { useScrollY }              from '@/hooks/useScrollY'
-import { useReducedMotion }        from '@/hooks/useReducedMotion'
-import { whatsappButton }          from '@/lib/motion'
-import { buildWhatsAppURL }        from '@/lib/whatsapp'
-import { cn }                      from '@/lib/cn'
+import { MessageCircle } from 'lucide-react'
+import { useScrollY } from '@/hooks/useScrollY'
+import { useReducedMotion } from '@/hooks/useReducedMotion'
+import { whatsappButton } from '@/lib/motion'
+import { buildWhatsAppURL } from '@/lib/whatsapp'
+import { cn } from '@/lib/cn'
 
 // ─── Component ────────────────────────────────────────────────
 
 export function WhatsAppButton() {
-  const scrollY      = useScrollY()
+  const scrollY = useScrollY()
   const shouldReduce = useReducedMotion()
-  const isVisible    = scrollY > 300
-  const whatsappUrl  = buildWhatsAppURL()
+  const isVisible = scrollY > 300
+  const whatsappUrl = buildWhatsAppURL()
 
   const variants = shouldReduce
     ? { hidden: { opacity: 0 }, visible: { opacity: 1 }, exit: { opacity: 0 } }
@@ -52,7 +52,7 @@ export function WhatsAppButton() {
           exit="exit"
           className={cn(
             // Position + layer
-            'fixed bottom-6 right-6 z-floating',
+            'fixed right-6 bottom-6 z-floating',
             // Size — meets 56px minimum touch target
             'size-14',
             // Shape + color
@@ -67,17 +67,12 @@ export function WhatsAppButton() {
             'hover:-translate-y-0.5',
             'hover:shadow-[0_6px_24px_rgba(37,211,102,0.45),0_2px_8px_rgba(0,0,0,0.14)]',
             // Transition
-            'transition-all duration-fast ease-smooth',
+            'duration-fast transition-all ease-smooth',
             // Focus
-            'focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#25D366]',
+            'focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#25D366]'
           )}
         >
-          <MessageCircle
-            size={26}
-            strokeWidth={1.75}
-            aria-hidden="true"
-            fill="currentColor"
-          />
+          <MessageCircle size={26} strokeWidth={1.75} aria-hidden="true" fill="currentColor" />
         </motion.a>
       )}
     </AnimatePresence>

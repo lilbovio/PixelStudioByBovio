@@ -1,4 +1,5 @@
 # PIXEL BY BOVIO
+
 # OFFICIAL PRODUCT REQUIREMENTS DOCUMENT (PART 1 OF 4)
 
 You are not just an AI that writes code.
@@ -44,7 +45,7 @@ The website must make business owners think:
 
 "If their own website looks this good, I want them to build mine."
 
-------------------------------------------------------
+---
 
 PROJECT NAME
 
@@ -58,7 +59,7 @@ Optional secondary sentence
 
 We design and build modern websites that help businesses earn trust, attract customers and grow.
 
-------------------------------------------------------
+---
 
 MAIN GOAL
 
@@ -104,7 +105,7 @@ Starting a conversation
 
 This flow must feel effortless.
 
-------------------------------------------------------
+---
 
 TARGET AUDIENCE
 
@@ -152,7 +153,7 @@ The visitor usually has one of these problems:
 
 Pixel by Bovio exists to solve those problems.
 
-------------------------------------------------------
+---
 
 BRAND PERSONALITY
 
@@ -212,7 +213,7 @@ No "We are the best."
 
 Instead use calm confidence.
 
-------------------------------------------------------
+---
 
 BRAND VALUES
 
@@ -238,7 +239,7 @@ Modern technology
 
 Business-oriented solutions
 
-------------------------------------------------------
+---
 
 POSITIONING
 
@@ -276,7 +277,7 @@ say
 
 Always translate technical work into business value.
 
-------------------------------------------------------
+---
 
 THE WEBSITE MUST FEEL LIKE
 
@@ -302,7 +303,7 @@ Perfect alignment.
 
 Nothing unnecessary.
 
-------------------------------------------------------
+---
 
 SITE MAP
 
@@ -324,7 +325,7 @@ Contact
 
 There should also be a sticky navigation visible throughout the experience.
 
-------------------------------------------------------
+---
 
 NAVIGATION
 
@@ -354,7 +355,7 @@ Start a Project
 
 Clicking this CTA should immediately open WhatsApp.
 
-------------------------------------------------------
+---
 
 HOMEPAGE STRUCTURE
 
@@ -388,7 +389,7 @@ Final CTA
 
 Footer
 
-------------------------------------------------------
+---
 
 HERO SECTION
 
@@ -428,7 +429,7 @@ See our Work
 
 The hero should immediately establish premium positioning.
 
-------------------------------------------------------
+---
 
 TRUST SECTION
 
@@ -458,7 +459,7 @@ Reliable.
 
 Future-proof.
 
-------------------------------------------------------
+---
 
 PROBLEM SECTION
 
@@ -482,7 +483,7 @@ They should think
 
 "That's exactly my situation."
 
-------------------------------------------------------
+---
 
 SOLUTION SECTION
 
@@ -510,7 +511,8 @@ Easy communication
 
 Keep the focus on business benefits rather than technology.
 
-------------------------------------------------------
+---
+
 SERVICES SECTION
 
 The Services section must immediately communicate that Pixel by Bovio is capable of solving different business needs while maintaining a focused offering.
@@ -569,7 +571,7 @@ Avoid generic stock icons.
 
 Use simple line icons with premium aesthetics.
 
-------------------------------------------------------
+---
 
 FEATURED WORK
 
@@ -629,7 +631,7 @@ Key features
 
 The goal is demonstrating design quality.
 
-------------------------------------------------------
+---
 
 PROCESS SECTION
 
@@ -675,7 +677,7 @@ Timeline indicator
 
 Subtle animations while scrolling.
 
-------------------------------------------------------
+---
 
 WHY CHOOSE PIXEL BY BOVIO
 
@@ -729,7 +731,7 @@ Avoid phrases like:
 
 Focus entirely on client value.
 
-------------------------------------------------------
+---
 
 ABOUT SECTION
 
@@ -753,7 +755,7 @@ The goal is to build lasting relationships with businesses that value design, pe
 
 This section should include a sophisticated portrait or abstract studio visual rather than a casual freelancer photo.
 
-------------------------------------------------------
+---
 
 FAQ SECTION
 
@@ -783,7 +785,7 @@ How do we start?
 
 Each answer should be concise, reassuring and transparent.
 
-------------------------------------------------------
+---
 
 FINAL CALL TO ACTION
 
@@ -817,7 +819,7 @@ Book a Discovery Call
 
 If a scheduling system is not yet available, hide the secondary button.
 
-------------------------------------------------------
+---
 
 FOOTER
 
@@ -849,7 +851,7 @@ Small copyright notice.
 
 The footer should feel like the closing chapter of the experience.
 
-------------------------------------------------------
+---
 
 COPYWRITING PRINCIPLES
 
@@ -871,7 +873,7 @@ Tone should feel confident, calm and intelligent.
 
 Reading level should be accessible without sounding simplistic.
 
-------------------------------------------------------
+---
 
 CONVERSION PRINCIPLES
 
@@ -915,7 +917,7 @@ How do I get started?
 
 This psychological flow should remain consistent throughout the entire experience.
 
-------------------------------------------------------
+---
 
 WHATSAPP INTEGRATION
 
@@ -951,7 +953,7 @@ The WhatsApp interaction should feel frictionless.
 
 Never require unnecessary forms before allowing users to contact the studio.
 
-------------------------------------------------------
+---
 
 NEXT SECTION
 
@@ -977,7 +979,8 @@ It will include:
 
 These specifications should guide every design decision before any code is written.
 
-------------------------------------------------------
+---
+
 OFFICIAL CREATIVE DIRECTION
 PART 3A
 
@@ -1003,7 +1006,7 @@ Confident.
 
 Timeless.
 
-------------------------------------------------------
+---
 
 DESIGN PHILOSOPHY
 
@@ -1045,7 +1048,7 @@ Whitespace is a design element.
 
 Use it intentionally.
 
-------------------------------------------------------
+---
 
 VISUAL REFERENCES
 
@@ -1077,7 +1080,7 @@ Do NOT imitate their branding.
 
 Instead borrow their design philosophy.
 
-------------------------------------------------------
+---
 
 FIRST IMPRESSION
 
@@ -1093,7 +1096,7 @@ Within ten seconds they should understand:
 
 "They build modern websites for businesses."
 
-------------------------------------------------------
+---
 
 COLOR PHILOSOPHY
 
@@ -1111,7 +1114,7 @@ Accent colors exist only to guide attention.
 
 The design should remain beautiful even if every accent color disappears.
 
-------------------------------------------------------
+---
 
 PRIMARY PALETTE
 
@@ -1157,7 +1160,7 @@ Hover slightly lighter
 
 Text always white
 
-------------------------------------------------------
+---
 
 ACCENT COLOR
 
@@ -1185,7 +1188,7 @@ Accent colors should guide actions.
 
 Not decorate the interface.
 
-------------------------------------------------------
+---
 
 GRADIENT RULES
 
@@ -1203,7 +1206,7 @@ No Web3 aesthetic.
 
 Think premium.
 
-------------------------------------------------------
+---
 
 GLASS SYSTEM
 
@@ -1241,7 +1244,7 @@ No excessive blur.
 
 Avoid making text difficult to read.
 
-------------------------------------------------------
+---
 
 SHADOW SYSTEM
 
@@ -1269,7 +1272,7 @@ Avoid large blurry shadows.
 
 Everything should remain elegant.
 
-------------------------------------------------------
+---
 
 BORDER RADIUS
 
@@ -1299,7 +1302,7 @@ Never mix many radius values.
 
 Create visual consistency.
 
-------------------------------------------------------
+---
 
 LAYOUT SYSTEM
 
@@ -1321,7 +1324,7 @@ Never compress content.
 
 Whitespace improves perceived quality.
 
-------------------------------------------------------
+---
 
 GRID SYSTEM
 
@@ -1345,7 +1348,7 @@ Cards should align precisely.
 
 Typography should align to the same rhythm.
 
-------------------------------------------------------
+---
 
 SPACING SYSTEM
 
@@ -1375,7 +1378,7 @@ Avoid random spacing values.
 
 Rhythm creates elegance.
 
-------------------------------------------------------
+---
 
 TYPOGRAPHY PHILOSOPHY
 
@@ -1395,7 +1398,7 @@ Never condensed.
 
 Never playful.
 
-------------------------------------------------------
+---
 
 FONT SELECTION
 
@@ -1419,7 +1422,7 @@ One font is enough.
 
 Use weight variation instead.
 
-------------------------------------------------------
+---
 
 TYPE SCALE
 
@@ -1451,7 +1454,7 @@ Labels
 
 Maintain proportional scaling across breakpoints.
 
-------------------------------------------------------
+---
 
 TEXT ALIGNMENT
 
@@ -1467,7 +1470,7 @@ Always left aligned.
 
 Never justify text.
 
-------------------------------------------------------
+---
 
 HEADLINE STYLE
 
@@ -1489,7 +1492,7 @@ Create something unforgettable.
 
 Avoid long marketing headlines.
 
-------------------------------------------------------
+---
 
 BODY COPY
 
@@ -1505,7 +1508,7 @@ No exaggerated claims.
 
 Every sentence should help business owners understand value.
 
-------------------------------------------------------
+---
 
 ICONOGRAPHY
 
@@ -1527,7 +1530,7 @@ Avoid emoji.
 
 Avoid filled icon sets.
 
-------------------------------------------------------
+---
 
 ILLUSTRATIONS
 
@@ -1545,7 +1548,7 @@ Never childish.
 
 Never cartoonish.
 
-------------------------------------------------------
+---
 
 IMAGERY
 
@@ -1567,7 +1570,7 @@ Abstract premium visuals
 
 Images should reinforce craftsmanship.
 
-------------------------------------------------------
+---
 
 BUTTON DESIGN
 
@@ -1599,7 +1602,7 @@ Not oversized.
 
 Not playful.
 
-------------------------------------------------------
+---
 
 FORM DESIGN
 
@@ -1621,7 +1624,7 @@ Validation should feel friendly.
 
 Never aggressive.
 
-------------------------------------------------------
+---
 
 SECTION DESIGN
 
@@ -1637,7 +1640,7 @@ Never introduce unnecessary colors.
 
 This creates rhythm without distraction.
 
-------------------------------------------------------
+---
 
 VISUAL HIERARCHY
 
@@ -1661,7 +1664,7 @@ Motion
 
 Never rely only on color.
 
-------------------------------------------------------
+---
 
 PREMIUM DETAILS
 
@@ -1691,7 +1694,7 @@ Thoughtful hover effects.
 
 Claude should obsess over these details.
 
-------------------------------------------------------
+---
 
 DESIGN PRINCIPLE
 
@@ -1711,7 +1714,7 @@ If a visitor leaves the website thinking:
 
 then the design has succeeded.
 
-------------------------------------------------------
+---
 
 END OF PART 3A
 
@@ -1739,7 +1742,8 @@ Advanced UX Patterns
 
 These rules will transform the interface from static to premium.
 
-------------------------------------------------------
+---
+
 OFFICIAL MOTION LANGUAGE
 PART 3B.1
 
@@ -1763,7 +1767,7 @@ Never animate something simply because it looks cool.
 
 Every movement should feel intentional.
 
-------------------------------------------------------
+---
 
 OVERALL MOTION PHILOSOPHY
 
@@ -1789,7 +1793,7 @@ Imagine expensive industrial design.
 
 Every transition should feel like moving physical objects with weight.
 
-------------------------------------------------------
+---
 
 USER PERCEPTION
 
@@ -1803,7 +1807,7 @@ The motion should become invisible.
 
 That is the goal.
 
-------------------------------------------------------
+---
 
 TIMING SYSTEM
 
@@ -1837,7 +1841,7 @@ Never randomly assign durations.
 
 Use this scale consistently.
 
-------------------------------------------------------
+---
 
 EASING
 
@@ -1863,7 +1867,7 @@ Never abrupt.
 
 Never robotic.
 
-------------------------------------------------------
+---
 
 PAGE LOAD EXPERIENCE
 
@@ -1885,7 +1889,7 @@ Approximately 600ms.
 
 The user should feel that the experience has started.
 
-------------------------------------------------------
+---
 
 INITIAL HERO ANIMATION
 
@@ -1923,7 +1927,7 @@ No dramatic movement.
 
 No zoom effects.
 
-------------------------------------------------------
+---
 
 SCROLL STORYTELLING
 
@@ -1945,7 +1949,7 @@ Become fully visible.
 
 The visitor should feel they are discovering content.
 
-------------------------------------------------------
+---
 
 SECTION REVEAL RULES
 
@@ -1957,7 +1961,7 @@ Do not animate when scrolling back upward.
 
 Motion should never become annoying.
 
-------------------------------------------------------
+---
 
 STAGGER ANIMATIONS
 
@@ -1983,7 +1987,7 @@ Approximately 60-80ms.
 
 The effect should be subtle.
 
-------------------------------------------------------
+---
 
 TEXT REVEAL
 
@@ -2011,7 +2015,7 @@ The visitor is a business owner.
 
 Not a conference attendee.
 
-------------------------------------------------------
+---
 
 IMAGE REVEAL
 
@@ -2031,7 +2035,7 @@ Avoid scaling from zero.
 
 Avoid dramatic zoom.
 
-------------------------------------------------------
+---
 
 CARD HOVER BEHAVIOR
 
@@ -2053,7 +2057,7 @@ Never float excessively.
 
 The effect should feel refined.
 
-------------------------------------------------------
+---
 
 BUTTON INTERACTION
 
@@ -2085,7 +2089,7 @@ Avoid oversized hover animations.
 
 Avoid glowing buttons.
 
-------------------------------------------------------
+---
 
 ICON ANIMATION
 
@@ -2103,7 +2107,7 @@ Never spin continuously.
 
 Never bounce.
 
-------------------------------------------------------
+---
 
 NAVIGATION BEHAVIOR
 
@@ -2119,7 +2123,7 @@ Navigation should feel attached to the interface.
 
 Not floating randomly.
 
-------------------------------------------------------
+---
 
 SCROLL INDICATOR
 
@@ -2131,7 +2135,7 @@ Never flash.
 
 Never distract.
 
-------------------------------------------------------
+---
 
 PROJECT PREVIEW HOVER
 
@@ -2151,7 +2155,7 @@ Animation duration
 
 Approximately 250ms.
 
-------------------------------------------------------
+---
 
 FAQ INTERACTION
 
@@ -2167,7 +2171,7 @@ Movement should feel soft.
 
 Never snap open.
 
-------------------------------------------------------
+---
 
 INPUT INTERACTION
 
@@ -2187,7 +2191,7 @@ Never shake inputs.
 
 Never use aggressive red flashes.
 
-------------------------------------------------------
+---
 
 MICROINTERACTIONS
 
@@ -2215,7 +2219,7 @@ Every interactive element should respond.
 
 Nothing should feel static.
 
-------------------------------------------------------
+---
 
 LINK HOVER
 
@@ -2229,7 +2233,7 @@ Optional small arrow movement.
 
 Avoid flashy effects.
 
-------------------------------------------------------
+---
 
 CURSOR EXPERIENCE
 
@@ -2243,7 +2247,7 @@ interactive elements should clearly communicate hover states.
 
 Accessibility always takes priority.
 
-------------------------------------------------------
+---
 
 LOADING STATES
 
@@ -2261,7 +2265,7 @@ Avoid aggressive shimmer speed.
 
 Loading should communicate polish.
 
-------------------------------------------------------
+---
 
 IMAGE LOADING
 
@@ -2275,7 +2279,7 @@ Always reserve image dimensions.
 
 Prevent CLS issues.
 
-------------------------------------------------------
+---
 
 NUMBER ANIMATIONS
 
@@ -2287,7 +2291,7 @@ Avoid fast casino-style counters.
 
 Numbers should feel trustworthy.
 
-------------------------------------------------------
+---
 
 BACKGROUND MOTION
 
@@ -2305,7 +2309,7 @@ Slow parallax.
 
 Never distract from content.
 
-------------------------------------------------------
+---
 
 GLASS ANIMATION
 
@@ -2323,7 +2327,7 @@ Transparency changes minimally.
 
 Avoid exaggerated frosted effects.
 
-------------------------------------------------------
+---
 
 SCROLL PARALLAX
 
@@ -2339,7 +2343,7 @@ Movement should be extremely subtle.
 
 Never create motion sickness.
 
-------------------------------------------------------
+---
 
 SUCCESS STATES
 
@@ -2357,7 +2361,7 @@ Do not redirect immediately.
 
 Allow users to read feedback.
 
-------------------------------------------------------
+---
 
 ERROR STATES
 
@@ -2371,7 +2375,7 @@ Never blame the user.
 
 Avoid alarming colors.
 
-------------------------------------------------------
+---
 
 EMPTY STATES
 
@@ -2385,7 +2389,7 @@ Suggested action.
 
 Never leave blank areas.
 
-------------------------------------------------------
+---
 
 REDUCED MOTION SUPPORT
 
@@ -2407,7 +2411,7 @@ Maintain functionality.
 
 Accessibility is mandatory.
 
-------------------------------------------------------
+---
 
 MOTION PRINCIPLE
 
@@ -2427,7 +2431,7 @@ If users notice the animations more than the content,
 
 the motion system has failed.
 
-------------------------------------------------------
+---
 
 END OF PART 3B.1
 
@@ -2449,7 +2453,8 @@ Design Tokens
 
 Production-ready Interface Guidelines
 
-------------------------------------------------------
+---
+
 OFFICIAL DESIGN SYSTEM
 PART 3B.2
 
@@ -2469,7 +2474,7 @@ Consistency creates trust.
 
 Inconsistency destroys perceived quality.
 
-------------------------------------------------------
+---
 
 RESPONSIVE DESIGN PHILOSOPHY
 
@@ -2493,7 +2498,7 @@ The experience should never feel like a scaled version of another screen.
 
 Every breakpoint deserves attention.
 
-------------------------------------------------------
+---
 
 RESPONSIVE BREAKPOINTS
 
@@ -2523,7 +2528,7 @@ Never stretch content simply because more width exists.
 
 Maximum reading width should always remain comfortable.
 
-------------------------------------------------------
+---
 
 MOBILE EXPERIENCE
 
@@ -2553,7 +2558,7 @@ No difficult gestures.
 
 Everything should be reachable with one hand.
 
-------------------------------------------------------
+---
 
 TABLET EXPERIENCE
 
@@ -2569,7 +2574,7 @@ Cards should become larger.
 
 Typography should scale naturally.
 
-------------------------------------------------------
+---
 
 DESKTOP EXPERIENCE
 
@@ -2585,7 +2590,7 @@ Create rhythm through alternating compositions.
 
 Avoid creating long uninterrupted walls of text.
 
-------------------------------------------------------
+---
 
 ACCESSIBILITY
 
@@ -2623,7 +2628,7 @@ Screen reader compatibility.
 
 Never sacrifice accessibility for aesthetics.
 
-------------------------------------------------------
+---
 
 FOCUS STATES
 
@@ -2637,7 +2642,7 @@ Customize them if necessary.
 
 Do not hide them.
 
-------------------------------------------------------
+---
 
 KEYBOARD NAVIGATION
 
@@ -2655,7 +2660,7 @@ Accordion.
 
 Everything must be reachable.
 
-------------------------------------------------------
+---
 
 COMPONENT PHILOSOPHY
 
@@ -2691,7 +2696,7 @@ Color language.
 
 Nothing should feel imported from another project.
 
-------------------------------------------------------
+---
 
 REUSABLE COMPONENTS
 
@@ -2739,7 +2744,7 @@ Modal
 
 Every component should be reusable.
 
-------------------------------------------------------
+---
 
 DESIGN TOKENS
 
@@ -2769,7 +2774,7 @@ Never hardcode values repeatedly.
 
 Everything should reference the design system.
 
-------------------------------------------------------
+---
 
 COLOR TOKENS
 
@@ -2803,7 +2808,7 @@ Error
 
 Even if some tokens are not immediately used, prepare the system for future growth.
 
-------------------------------------------------------
+---
 
 TYPOGRAPHY TOKENS
 
@@ -2843,7 +2848,7 @@ Letter spacing
 
 Responsive scaling
 
-------------------------------------------------------
+---
 
 SPACING TOKENS
 
@@ -2875,7 +2880,7 @@ Define spacing variables.
 
 Use these consistently.
 
-------------------------------------------------------
+---
 
 RADIUS TOKENS
 
@@ -2891,7 +2896,7 @@ Pill
 
 Apply consistently.
 
-------------------------------------------------------
+---
 
 SHADOW TOKENS
 
@@ -2907,7 +2912,7 @@ Elevated
 
 Never create random shadows.
 
-------------------------------------------------------
+---
 
 Z-INDEX SYSTEM
 
@@ -2931,7 +2936,7 @@ Tooltip
 
 Maintain predictable stacking.
 
-------------------------------------------------------
+---
 
 IMAGE GUIDELINES
 
@@ -2949,7 +2954,7 @@ Always include descriptive alt text.
 
 Avoid decorative images without purpose.
 
-------------------------------------------------------
+---
 
 ICON GUIDELINES
 
@@ -2965,7 +2970,7 @@ Icons support content.
 
 They never replace it.
 
-------------------------------------------------------
+---
 
 SECTION RHYTHM
 
@@ -2997,7 +3002,7 @@ Single column
 
 This creates visual rhythm.
 
-------------------------------------------------------
+---
 
 CONTENT WIDTH
 
@@ -3007,7 +3012,7 @@ Keep text within comfortable reading widths.
 
 Do not stretch body copy across large screens.
 
-------------------------------------------------------
+---
 
 ERROR PREVENTION
 
@@ -3025,7 +3030,7 @@ Friendly error messages.
 
 Preserve entered data after validation errors.
 
-------------------------------------------------------
+---
 
 EMPTY STATES
 
@@ -3043,7 +3048,7 @@ Forms
 
 The website should never appear broken because content is unavailable.
 
-------------------------------------------------------
+---
 
 SUCCESS FEEDBACK
 
@@ -3061,7 +3066,7 @@ Use subtle confirmations.
 
 Never intrusive popups.
 
-------------------------------------------------------
+---
 
 ADVANCED UX PRINCIPLES
 
@@ -3081,7 +3086,7 @@ What they can do.
 
 What happens next.
 
-------------------------------------------------------
+---
 
 COGNITIVE LOAD
 
@@ -3097,7 +3102,7 @@ Use headings frequently.
 
 Allow users to scan before reading.
 
-------------------------------------------------------
+---
 
 TRUST SIGNALS
 
@@ -3121,7 +3126,7 @@ Thoughtful interactions.
 
 Trust is built through hundreds of small decisions.
 
-------------------------------------------------------
+---
 
 PERFORMANCE MINDSET
 
@@ -3137,7 +3142,7 @@ Limit heavy animations.
 
 The fastest website usually feels the most premium.
 
-------------------------------------------------------
+---
 
 FUTURE SCALABILITY
 
@@ -3163,7 +3168,7 @@ Contact
 
 Every future page should feel native to the existing system.
 
-------------------------------------------------------
+---
 
 QUALITY STANDARD
 
@@ -3193,7 +3198,7 @@ Attention to detail.
 
 Nothing ships unfinished.
 
-------------------------------------------------------
+---
 
 FINAL DESIGN PRINCIPLE
 
@@ -3209,13 +3214,14 @@ If the visitor thinks:
 
 then the design system has fulfilled its purpose.
 
-------------------------------------------------------
+---
 
 END OF PART 3B.2
 
 The next and final section of this document will define the complete engineering architecture, technology stack, folder structure, coding standards, SEO strategy, performance optimization, deployment workflow, CMS readiness, scalability, quality assurance checklist, and final implementation rules required to build Pixel by Bovio as a production-ready website.
 
-------------------------------------------------------
+---
+
 ENGINEERING ARCHITECTURE
 PART 4A
 
@@ -3231,7 +3237,7 @@ Never generate unnecessary abstractions.
 
 Everything must be production-ready.
 
-------------------------------------------------------
+---
 
 PRIMARY OBJECTIVE
 
@@ -3253,7 +3259,7 @@ Developer Experience
 
 The project should remain easy to maintain for years.
 
-------------------------------------------------------
+---
 
 TECH STACK
 
@@ -3319,7 +3325,7 @@ Formatting
 
 Prettier
 
-------------------------------------------------------
+---
 
 PROJECT PHILOSOPHY
 
@@ -3339,7 +3345,7 @@ Single Responsibility Principle.
 
 Every component should do one thing well.
 
-------------------------------------------------------
+---
 
 PROJECT STRUCTURE
 
@@ -3387,7 +3393,7 @@ public/projects/
 
 Every folder should have a clear purpose.
 
-------------------------------------------------------
+---
 
 NAMING CONVENTIONS
 
@@ -3419,7 +3425,7 @@ Test
 
 Never abbreviate unnecessarily.
 
-------------------------------------------------------
+---
 
 FILE ORGANIZATION
 
@@ -3431,7 +3437,7 @@ Split large components.
 
 Avoid files exceeding approximately 250 lines unless absolutely necessary.
 
-------------------------------------------------------
+---
 
 SERVER VS CLIENT COMPONENTS
 
@@ -3443,7 +3449,7 @@ Avoid unnecessary "use client".
 
 Keep JavaScript bundles small.
 
-------------------------------------------------------
+---
 
 DATA STRUCTURE
 
@@ -3469,7 +3475,7 @@ Create reusable data objects.
 
 Future content updates should require minimal code changes.
 
-------------------------------------------------------
+---
 
 COMPONENT DESIGN
 
@@ -3489,7 +3495,7 @@ Consistent spacing.
 
 Never duplicate UI.
 
-------------------------------------------------------
+---
 
 STATE MANAGEMENT
 
@@ -3501,7 +3507,7 @@ The website is mostly static.
 
 Do not introduce unnecessary complexity.
 
-------------------------------------------------------
+---
 
 FORMS
 
@@ -3525,7 +3531,7 @@ Error state
 
 Disable duplicate submissions.
 
-------------------------------------------------------
+---
 
 WHATSAPP CTA
 
@@ -3541,7 +3547,7 @@ Prefill message dynamically.
 
 Allow easy future modification.
 
-------------------------------------------------------
+---
 
 SEO PHILOSOPHY
 
@@ -3569,7 +3575,7 @@ Readable URLs.
 
 Proper image alt text.
 
-------------------------------------------------------
+---
 
 STRUCTURED DATA
 
@@ -3583,7 +3589,7 @@ Organization schema.
 
 Future-ready for Local Business schema.
 
-------------------------------------------------------
+---
 
 OPEN GRAPH
 
@@ -3599,7 +3605,7 @@ Brand consistency.
 
 Social previews should look premium.
 
-------------------------------------------------------
+---
 
 SITEMAP
 
@@ -3609,7 +3615,7 @@ Include all public pages.
 
 Prepare architecture for future blog pages.
 
-------------------------------------------------------
+---
 
 ROBOTS
 
@@ -3619,7 +3625,7 @@ Allow indexing.
 
 Reference sitemap.
 
-------------------------------------------------------
+---
 
 URL STRUCTURE
 
@@ -3639,7 +3645,7 @@ Examples
 
 Avoid unnecessary nesting.
 
-------------------------------------------------------
+---
 
 SEMANTIC HTML
 
@@ -3665,7 +3671,7 @@ form
 
 Never rely entirely on divs.
 
-------------------------------------------------------
+---
 
 PERFORMANCE PHILOSOPHY
 
@@ -3677,7 +3683,7 @@ Every image matters.
 
 Users should perceive speed immediately.
 
-------------------------------------------------------
+---
 
 IMAGE STRATEGY
 
@@ -3693,7 +3699,7 @@ Compress assets.
 
 Prefer WebP or AVIF.
 
-------------------------------------------------------
+---
 
 FONT STRATEGY
 
@@ -3707,7 +3713,7 @@ Optimize loading.
 
 Prevent CLS.
 
-------------------------------------------------------
+---
 
 CSS PHILOSOPHY
 
@@ -3719,7 +3725,7 @@ Create reusable utility classes only when beneficial.
 
 Maintain consistency.
 
-------------------------------------------------------
+---
 
 ANIMATION PERFORMANCE
 
@@ -3745,7 +3751,7 @@ whenever possible.
 
 Prefer GPU-friendly properties.
 
-------------------------------------------------------
+---
 
 CODE QUALITY
 
@@ -3755,7 +3761,7 @@ Optimize for maintainability.
 
 Future developers should understand the project immediately.
 
-------------------------------------------------------
+---
 
 COMMENTS
 
@@ -3765,7 +3771,7 @@ Do not explain obvious code.
 
 Explain architectural decisions.
 
-------------------------------------------------------
+---
 
 ERROR HANDLING
 
@@ -3783,7 +3789,7 @@ Failed requests.
 
 The website should never appear broken.
 
-------------------------------------------------------
+---
 
 LOADING EXPERIENCE
 
@@ -3797,7 +3803,7 @@ Graceful transition.
 
 No flashing.
 
-------------------------------------------------------
+---
 
 SCROLL RESTORATION
 
@@ -3807,7 +3813,7 @@ Avoid unexpected jumps.
 
 Preserve user context.
 
-------------------------------------------------------
+---
 
 ACCESSIBILITY IMPLEMENTATION
 
@@ -3827,7 +3833,7 @@ Reduced motion support.
 
 Semantic markup.
 
-------------------------------------------------------
+---
 
 CONTACT INFORMATION
 
@@ -3863,7 +3869,7 @@ GitHub (optional)
 
 Future changes should update automatically across the website.
 
-------------------------------------------------------
+---
 
 ANALYTICS
 
@@ -3881,7 +3887,7 @@ Meta Pixel (future)
 
 Keep integrations modular.
 
-------------------------------------------------------
+---
 
 DEPLOYMENT
 
@@ -3893,7 +3899,7 @@ Environment variables only when required.
 
 No unnecessary dependencies.
 
-------------------------------------------------------
+---
 
 SCALABILITY
 
@@ -3923,7 +3929,7 @@ Resources
 
 Everything built today should support tomorrow.
 
-------------------------------------------------------
+---
 
 INTERNATIONALIZATION
 
@@ -3935,7 +3941,7 @@ Avoid hardcoded assumptions.
 
 Content should be easy to translate later.
 
-------------------------------------------------------
+---
 
 CONTENT MANAGEMENT
 
@@ -3959,7 +3965,7 @@ Strapi
 
 Architecture should remain CMS-agnostic.
 
-------------------------------------------------------
+---
 
 ENGINEERING PRINCIPLE
 
@@ -3975,13 +3981,14 @@ Every folder.
 
 Should communicate craftsmanship.
 
-------------------------------------------------------
+---
 
 END OF PART 4A
 
 The final section will define production QA, Lighthouse optimization, security, deployment validation, production checklist, future roadmap, anti-patterns to avoid, and the final execution rules that Claude must follow before considering the project complete.
 
-------------------------------------------------------
+---
+
 PRODUCTION READINESS
 PART 4B
 
@@ -4001,7 +4008,7 @@ Every spacing value.
 
 Everything should communicate craftsmanship.
 
-------------------------------------------------------
+---
 
 QUALITY ASSURANCE
 
@@ -4039,7 +4046,7 @@ Error states
 
 Every issue should be resolved before launch.
 
-------------------------------------------------------
+---
 
 VISUAL QA
 
@@ -4067,7 +4074,7 @@ No section feels disconnected.
 
 Nothing should appear unfinished.
 
-------------------------------------------------------
+---
 
 RESPONSIVE QA
 
@@ -4107,7 +4114,7 @@ Touch targets remain comfortable.
 
 Spacing adapts naturally.
 
-------------------------------------------------------
+---
 
 ACCESSIBILITY QA
 
@@ -4135,7 +4142,7 @@ Accessible labels.
 
 Accessibility should never be compromised.
 
-------------------------------------------------------
+---
 
 SEO QA
 
@@ -4163,7 +4170,7 @@ Valid robots.txt.
 
 Valid sitemap.xml.
 
-------------------------------------------------------
+---
 
 PERFORMANCE QA
 
@@ -4189,7 +4196,7 @@ Reduce unnecessary client-side code.
 
 Prioritize perceived performance.
 
-------------------------------------------------------
+---
 
 LIGHTHOUSE TARGETS
 
@@ -4207,7 +4214,7 @@ These values are goals.
 
 Never sacrifice user experience solely to improve metrics.
 
-------------------------------------------------------
+---
 
 ANIMATION QA
 
@@ -4227,7 +4234,7 @@ No unnecessary animation.
 
 Motion should reinforce quality.
 
-------------------------------------------------------
+---
 
 FORM QA
 
@@ -4247,7 +4254,7 @@ Mobile behavior.
 
 Duplicate submission prevention.
 
-------------------------------------------------------
+---
 
 LINK QA
 
@@ -4267,7 +4274,7 @@ Social links.
 
 No broken destinations.
 
-------------------------------------------------------
+---
 
 IMAGE QA
 
@@ -4285,7 +4292,7 @@ Use optimized formats.
 
 Appear sharp on high-density displays.
 
-------------------------------------------------------
+---
 
 SECURITY
 
@@ -4301,7 +4308,7 @@ Use HTTPS-ready practices.
 
 Follow secure defaults.
 
-------------------------------------------------------
+---
 
 CODE QUALITY
 
@@ -4325,7 +4332,7 @@ Duplicate logic.
 
 Keep the project clean.
 
-------------------------------------------------------
+---
 
 CONSISTENCY REVIEW
 
@@ -4343,7 +4350,7 @@ Use consistent naming.
 
 Consistency builds trust.
 
-------------------------------------------------------
+---
 
 SCALABILITY REVIEW
 
@@ -4367,7 +4374,7 @@ Additional services
 
 New sections should integrate naturally.
 
-------------------------------------------------------
+---
 
 DOCUMENTATION
 
@@ -4395,7 +4402,7 @@ How to update navigation.
 
 Documentation should be practical.
 
-------------------------------------------------------
+---
 
 FINAL REVIEW
 
@@ -4413,7 +4420,7 @@ Would this website stand alongside modern digital studios?
 
 If any answer is uncertain, continue refining.
 
-------------------------------------------------------
+---
 
 DESIGN PRINCIPLE
 
@@ -4431,7 +4438,7 @@ Choose quality over quantity.
 
 Choose restraint over excess.
 
-------------------------------------------------------
+---
 
 SUCCESS CRITERIA
 
@@ -4445,6 +4452,6 @@ I want them to build mine.
 
 If these impressions are achieved, the project has fulfilled its purpose.
 
-------------------------------------------------------
+---
 
 END OF DOCUMENT

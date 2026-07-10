@@ -19,6 +19,7 @@
 Pixel by Bovio is not selling websites.
 
 It is selling **growth**. The website is only the tool. The real product is:
+
 - Trust
 - Credibility
 - Customer attraction
@@ -26,12 +27,12 @@ It is selling **growth**. The website is only the tool. The real product is:
 
 Every piece of brand communication translates technical work into business value.
 
-| Instead of | Say |
-|---|---|
-| "We build responsive websites" | "Your customers can reach you from any device." |
-| "We optimize SEO" | "Help more people discover your business online." |
-| "We write clean code" | "Your website loads fast because your customers' time matters." |
-| "We do UI design" | "Your website will reflect the quality of your business." |
+| Instead of                     | Say                                                             |
+| ------------------------------ | --------------------------------------------------------------- |
+| "We build responsive websites" | "Your customers can reach you from any device."                 |
+| "We optimize SEO"              | "Help more people discover your business online."               |
+| "We write clean code"          | "Your website loads fast because your customers' time matters." |
+| "We do UI design"              | "Your website will reflect the quality of your business."       |
 
 ---
 
@@ -42,6 +43,7 @@ The brand sits between these reference points:
 > Apple × Linear × Vercel × Framer × Arc Browser × Notion × Resend
 
 **The brand IS:**
+
 - Minimal
 - Elegant
 - Premium
@@ -52,6 +54,7 @@ The brand sits between these reference points:
 - Human
 
 **The brand is NOT:**
+
 - Arrogant
 - Childish
 - Corporate
@@ -102,18 +105,18 @@ Imagine a senior advisor who has seen it all — not an excited salesperson, not
 
 ### Tone Calibration by Section
 
-| Section | Tone |
-|---|---|
-| Hero | Bold. Direct. Confident. High impact. |
-| Problem | Empathetic. Relatable. Non-judgmental. |
-| Solution | Clear. Reassuring. Practical. |
-| Services | Professional. Outcome-focused. Brief. |
-| Work | Confident. Understated. Let the work speak. |
-| Process | Structured. Transparent. Trust-building. |
-| Why Us | Direct. Evidence-based. Client-focused. |
-| FAQ | Warm. Honest. Helpful. Plain language. |
+| Section   | Tone                                         |
+| --------- | -------------------------------------------- |
+| Hero      | Bold. Direct. Confident. High impact.        |
+| Problem   | Empathetic. Relatable. Non-judgmental.       |
+| Solution  | Clear. Reassuring. Practical.                |
+| Services  | Professional. Outcome-focused. Brief.        |
+| Work      | Confident. Understated. Let the work speak.  |
+| Process   | Structured. Transparent. Trust-building.     |
+| Why Us    | Direct. Evidence-based. Client-focused.      |
+| FAQ       | Warm. Honest. Helpful. Plain language.       |
 | Final CTA | Warm invitation. Calm urgency. Low friction. |
-| Footer | Minimal. Clean. Factual. |
+| Footer    | Minimal. Clean. Factual.                     |
 
 ---
 
@@ -122,6 +125,7 @@ Imagine a senior advisor who has seen it all — not an excited salesperson, not
 Headlines should be short, confident, and memorable. They speak directly to what the client wants.
 
 ### Examples of On-Brand Headlines
+
 ```
 Websites designed to grow your business.
 Design that builds trust.
@@ -133,6 +137,7 @@ Websites that earn trust.
 ```
 
 ### Examples of Off-Brand Headlines
+
 ```
 We are passionate about creating amazing digital experiences! ✗
 Transforming your online presence with cutting-edge solutions ✗
@@ -164,15 +169,15 @@ Never use these words or phrases in any context:
 
 ### Primary Palette
 
-| Role | Hex | Usage |
-|---|---|---|
-| Background | `#FFFFFF` | Primary surfaces |
-| Background Alt | `#F9FAFB` | Section alternation |
-| Text Primary | `#0F0F0F` | Headlines |
-| Text Secondary | `#374151` | Body copy |
-| Text Muted | `#6B7280` | Supporting text |
-| Button Primary | `#111827` | CTA buttons |
-| Accent | `#1A56DB` | Links, focus, emphasis |
+| Role           | Hex       | Usage                  |
+| -------------- | --------- | ---------------------- |
+| Background     | `#FFFFFF` | Primary surfaces       |
+| Background Alt | `#F9FAFB` | Section alternation    |
+| Text Primary   | `#0F0F0F` | Headlines              |
+| Text Secondary | `#374151` | Body copy              |
+| Text Muted     | `#6B7280` | Supporting text        |
+| Button Primary | `#111827` | CTA buttons            |
+| Accent         | `#1A56DB` | Links, focus, emphasis |
 
 ### Accent Color Restraint
 
@@ -181,6 +186,7 @@ One accent color only: **Deep Blue `#1A56DB`**.
 It appears sparingly — hyperlinks, focus rings, emphasis highlights. Never used for background fills, gradients, or decoration.
 
 ### Prohibited Colors
+
 - Purple (any shade)
 - Bright green
 - Orange
@@ -198,12 +204,14 @@ It appears sparingly — hyperlinks, focus rings, emphasis highlights. Never use
 One font. Weight variation creates all hierarchy. This constraint communicates discipline and restraint — qualities the brand stands for.
 
 ### Headline Style
+
 - Short, typically 4–7 words
 - Negative letter-spacing on large sizes (tighter tracking = more premium)
 - Heavy weight (700–800) for impact
 - Mostly left-aligned
 
 ### Body Copy Style
+
 - 16–18px
 - Line height 1.65–1.7 (generous — easier to read)
 - Short paragraphs (2–4 sentences)
@@ -216,6 +224,7 @@ One font. Weight variation creates all hierarchy. This constraint communicates d
 **Library:** Lucide React (outline/line style)
 
 Rules:
+
 - One icon family across the entire site
 - Consistent stroke width (1.5–2px)
 - Consistent sizing per context:
@@ -235,6 +244,7 @@ Rules:
 **No generic stock photos.** They communicate inauthenticity.
 
 **Use instead:**
+
 - Beautiful UI/website mockups in browser frames
 - High-quality device mockups (phone, laptop, tablet)
 - Studio-inspired abstract compositions
@@ -243,6 +253,7 @@ Rules:
 - Abstract premium visuals (dark, minimal, architectural)
 
 **Image treatment:**
+
 - Slight rounded corners (24px)
 - Subtle shadow at rest
 - Never stretch or distort images
@@ -258,18 +269,19 @@ Since there are no real client projects at launch, conceptual case studies are c
 
 Approved conceptual project types:
 
-| Project | Industry | Tone |
-|---|---|---|
-| Specialty Coffee Shop | Food & Beverage | Warm, artisanal, premium |
-| Modern Dental Clinic | Healthcare | Clean, trustworthy, professional |
-| Architecture Studio | Professional Services | Minimal, sophisticated, precise |
-| Fitness Center | Health & Wellness | Bold, energetic but refined |
-| Law Firm | Legal | Authoritative, trustworthy, traditional-modern |
-| Real Estate Agency | Real Estate | Premium, aspirational |
-| Restaurant | Food & Beverage | Warm, experiential |
-| Beauty Studio | Beauty & Wellness | Elegant, personal, luxurious |
+| Project               | Industry              | Tone                                           |
+| --------------------- | --------------------- | ---------------------------------------------- |
+| Specialty Coffee Shop | Food & Beverage       | Warm, artisanal, premium                       |
+| Modern Dental Clinic  | Healthcare            | Clean, trustworthy, professional               |
+| Architecture Studio   | Professional Services | Minimal, sophisticated, precise                |
+| Fitness Center        | Health & Wellness     | Bold, energetic but refined                    |
+| Law Firm              | Legal                 | Authoritative, trustworthy, traditional-modern |
+| Real Estate Agency    | Real Estate           | Premium, aspirational                          |
+| Restaurant            | Food & Beverage       | Warm, experiential                             |
+| Beauty Studio         | Beauty & Wellness     | Elegant, personal, luxurious                   |
 
 Each concept includes:
+
 - Large hero preview image
 - Mobile preview image
 - Color palette (3–5 colors)
@@ -282,13 +294,13 @@ Each concept includes:
 
 ## 13. Social Media Presence
 
-| Platform | Priority | Usage |
-|---|---|---|
-| Instagram | High | Showcase work, behind-the-scenes, brand building |
-| LinkedIn | High | Professional reach, B2B audiences |
-| Behance | Future | Portfolio platform for creative community |
-| Dribbble | Future | Design community visibility |
-| GitHub | Optional | Technical credibility signal |
+| Platform  | Priority | Usage                                            |
+| --------- | -------- | ------------------------------------------------ |
+| Instagram | High     | Showcase work, behind-the-scenes, brand building |
+| LinkedIn  | High     | Professional reach, B2B audiences                |
+| Behance   | Future   | Portfolio platform for creative community        |
+| Dribbble  | Future   | Design community visibility                      |
+| GitHub    | Optional | Technical credibility signal                     |
 
 ---
 
@@ -297,6 +309,7 @@ Each concept includes:
 WhatsApp is the conversion mechanism. It must feel intentional, not like an afterthought.
 
 **Prefilled message:**
+
 ```
 Hello Pixel by Bovio,
 
@@ -310,6 +323,7 @@ Thank you.
 This message is friendly, non-committal, and easy to send. It removes all friction from starting a conversation.
 
 WhatsApp appears in:
+
 1. Navigation CTA button ("Start a Project")
 2. Hero section primary CTA
 3. Floating sticky button (after 300px scroll)

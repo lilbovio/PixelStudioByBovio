@@ -17,11 +17,11 @@ import { cn } from '@/lib/cn'
 // ─── Types ────────────────────────────────────────────────────
 
 type LogomarkVariant = 'full' | 'mark'
-type LogomarkScheme  = 'dark' | 'light'
+type LogomarkScheme = 'dark' | 'light'
 
 interface LogomarkProps {
-  variant?:   LogomarkVariant
-  scheme?:    LogomarkScheme
+  variant?: LogomarkVariant
+  scheme?: LogomarkScheme
   className?: string
 }
 
@@ -58,19 +58,12 @@ function PixelMark({ scheme }: { scheme: LogomarkScheme }) {
 
 // ─── Component ────────────────────────────────────────────────
 
-export function Logomark({
-  variant   = 'mark',
-  scheme    = 'dark',
-  className,
-}: LogomarkProps) {
+export function Logomark({ variant = 'mark', scheme = 'dark', className }: LogomarkProps) {
   const isLight = scheme === 'light'
 
   return (
     <span
-      className={cn(
-        'inline-flex items-center gap-2.5 select-none',
-        className
-      )}
+      className={cn('inline-flex items-center gap-2.5 select-none', className)}
       aria-label="Pixel Studio by Bovio"
     >
       {/* Geometric pixel mark */}
@@ -79,10 +72,7 @@ export function Logomark({
       {/* Wordmark */}
       <span className="inline-flex items-baseline gap-1 leading-none">
         <span
-          className={cn(
-            'tracking-tight',
-            isLight ? 'text-white/80' : 'text-text-muted',
-          )}
+          className={cn('tracking-tight', isLight ? 'text-white/80' : 'text-text-muted')}
           style={{
             fontSize: 'inherit',
             fontWeight: 500,
@@ -92,10 +82,7 @@ export function Logomark({
           pixel
         </span>
         <span
-          className={cn(
-            'tracking-tight',
-            isLight ? 'text-white' : 'text-text-primary',
-          )}
+          className={cn('tracking-tight', isLight ? 'text-white' : 'text-text-primary')}
           style={{
             fontSize: 'inherit',
             fontWeight: 800,
@@ -108,10 +95,7 @@ export function Logomark({
 
       {variant === 'full' && (
         <span
-          className={cn(
-            'type-label',
-            isLight ? 'text-white/35' : 'text-text-disabled',
-          )}
+          className={cn('type-label', isLight ? 'text-white/35' : 'text-text-disabled')}
           style={{ marginLeft: '2px' }}
         >
           by bovio

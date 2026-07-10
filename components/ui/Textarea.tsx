@@ -18,11 +18,11 @@ import { cn } from '@/lib/cn'
 // ─── Types ────────────────────────────────────────────────────
 
 interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
-  label?:        string
-  helperText?:   string
+  label?: string
+  helperText?: string
   errorMessage?: string
-  errorId?:      string
-  className?:    string
+  errorId?: string
+  className?: string
 }
 
 // ─── Styles ───────────────────────────────────────────────────
@@ -47,20 +47,19 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(function 
   { label, helperText, errorMessage, errorId, className, id, required, rows = 4, ...rest },
   ref
 ) {
-  const textareaId  = id ?? (label ? label.toLowerCase().replace(/\s+/g, '-') : undefined)
-  const hasError    = Boolean(errorMessage)
+  const textareaId = id ?? (label ? label.toLowerCase().replace(/\s+/g, '-') : undefined)
+  const hasError = Boolean(errorMessage)
   const describedBy = errorId ?? (hasError && textareaId ? `${textareaId}-error` : undefined)
 
   return (
     <div className="flex flex-col gap-1.5">
       {label && (
-        <label
-          htmlFor={textareaId}
-          className="type-label text-text-secondary"
-        >
+        <label htmlFor={textareaId} className="type-label text-text-secondary">
           {label}
           {required && (
-            <span className="ml-0.5 text-error" aria-hidden="true">*</span>
+            <span className="ml-0.5 text-error" aria-hidden="true">
+              *
+            </span>
           )}
         </label>
       )}
@@ -78,18 +77,12 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(function 
       />
 
       {hasError && errorMessage && (
-        <p
-          id={describedBy}
-          role="alert"
-          className="type-caption text-error"
-        >
+        <p id={describedBy} role="alert" className="type-caption text-error">
           {errorMessage}
         </p>
       )}
 
-      {!hasError && helperText && (
-        <p className="type-caption text-text-muted">{helperText}</p>
-      )}
+      {!hasError && helperText && <p className="type-caption text-text-muted">{helperText}</p>}
     </div>
   )
 })

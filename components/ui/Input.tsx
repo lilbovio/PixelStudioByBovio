@@ -24,12 +24,12 @@ import { cn } from '@/lib/cn'
 // ─── Types ────────────────────────────────────────────────────
 
 interface InputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'> {
-  label?:       string
-  helperText?:  string
+  label?: string
+  helperText?: string
   errorMessage?: string
   /** id of the element containing the error message, for aria-describedby */
-  errorId?:     string
-  className?:   string
+  errorId?: string
+  className?: string
 }
 
 // ─── Styles ───────────────────────────────────────────────────
@@ -60,20 +60,19 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
   { label, helperText, errorMessage, errorId, className, id, required, ...rest },
   ref
 ) {
-  const inputId   = id ?? (label ? label.toLowerCase().replace(/\s+/g, '-') : undefined)
-  const hasError  = Boolean(errorMessage)
+  const inputId = id ?? (label ? label.toLowerCase().replace(/\s+/g, '-') : undefined)
+  const hasError = Boolean(errorMessage)
   const describedBy = errorId ?? (hasError && inputId ? `${inputId}-error` : undefined)
 
   return (
     <div className="flex flex-col gap-1.5">
       {label && (
-        <label
-          htmlFor={inputId}
-          className="type-label text-text-secondary"
-        >
+        <label htmlFor={inputId} className="type-label text-text-secondary">
           {label}
           {required && (
-            <span className="ml-0.5 text-error" aria-hidden="true">*</span>
+            <span className="ml-0.5 text-error" aria-hidden="true">
+              *
+            </span>
           )}
         </label>
       )}
@@ -91,19 +90,13 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
 
       {/* Error message */}
       {hasError && errorMessage && (
-        <p
-          id={describedBy}
-          role="alert"
-          className="type-caption text-error"
-        >
+        <p id={describedBy} role="alert" className="type-caption text-error">
           {errorMessage}
         </p>
       )}
 
       {/* Helper text — only shown when no error */}
-      {!hasError && helperText && (
-        <p className="type-caption text-text-muted">{helperText}</p>
-      )}
+      {!hasError && helperText && <p className="type-caption text-text-muted">{helperText}</p>}
     </div>
   )
 })

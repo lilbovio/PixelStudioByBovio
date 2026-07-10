@@ -6,15 +6,15 @@ Premium Digital Design Studio — [pixelstudiobybovio.lat](https://pixelstudioby
 
 ## Tech Stack
 
-| | |
-|---|---|
-| Framework | Next.js 16 (App Router) |
-| Language | TypeScript (strict) |
-| Styling | Tailwind CSS v4 |
-| Animations | Framer Motion |
-| Icons | Lucide React |
-| Font | Geist |
-| Deployment | Vercel |
+|            |                         |
+| ---------- | ----------------------- |
+| Framework  | Next.js 16 (App Router) |
+| Language   | TypeScript (strict)     |
+| Styling    | Tailwind CSS v4         |
+| Animations | Framer Motion           |
+| Icons      | Lucide React            |
+| Font       | Geist                   |
+| Deployment | Vercel                  |
 
 ## Development
 
@@ -69,6 +69,7 @@ cp .env.example .env.local
 ```
 
 Required:
+
 - `NEXT_PUBLIC_WHATSAPP_NUMBER` — WhatsApp number without `+` or spaces
 - `NEXT_PUBLIC_SITE_URL` — Canonical site URL
 

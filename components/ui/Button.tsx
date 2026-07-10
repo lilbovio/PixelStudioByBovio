@@ -17,17 +17,17 @@ import type { ReactNode } from 'react'
 // ─── Types ────────────────────────────────────────────────────
 
 type ButtonVariant = 'primary' | 'secondary' | 'ghost'
-type ButtonSize    = 'sm' | 'md' | 'lg'
+type ButtonSize = 'sm' | 'md' | 'lg'
 
 interface ButtonBaseProps {
-  variant?:      ButtonVariant
-  size?:         ButtonSize
-  loading?:      boolean
-  disabled?:     boolean
-  icon?:         ReactNode
+  variant?: ButtonVariant
+  size?: ButtonSize
+  loading?: boolean
+  disabled?: boolean
+  icon?: ReactNode
   iconPosition?: 'left' | 'right'
-  className?:    string
-  children:      ReactNode
+  className?: string
+  children: ReactNode
 }
 
 type ButtonAsButton = ButtonBaseProps &
@@ -73,7 +73,7 @@ const variants: Record<ButtonVariant, string> = {
     'hover:-translate-y-px hover:bg-btn-primary-hover',
     'hover:shadow-[0_4px_12px_rgba(0,0,0,0.20),0_1px_3px_rgba(0,0,0,0.15),inset_0_1px_0_rgba(255,255,255,0.06)]',
     // Press
-    'active:translate-y-0 active:scale-[0.98] active:shadow-none',
+    'active:translate-y-0 active:scale-[0.98] active:shadow-none'
   ),
   secondary: cn(
     // Glass surface
@@ -83,12 +83,12 @@ const variants: Record<ButtonVariant, string> = {
     // Hover: tighten border, slight bg
     'hover:bg-bg-secondary hover:border-border-strong',
     'hover:shadow-medium',
-    'active:scale-[0.98]',
+    'active:scale-[0.98]'
   ),
   ghost: cn(
     'bg-transparent text-text-muted border border-transparent',
     'hover:text-text-primary hover:bg-bg-secondary',
-    'active:scale-[0.98]',
+    'active:scale-[0.98]'
   ),
 }
 
@@ -109,12 +109,7 @@ function Spinner() {
       fill="none"
       viewBox="0 0 24 24"
     >
-      <circle
-        className="opacity-25"
-        cx="12" cy="12" r="10"
-        stroke="currentColor"
-        strokeWidth="3"
-      />
+      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="3" />
       <path
         className="opacity-75"
         fill="currentColor"
@@ -128,10 +123,10 @@ function Spinner() {
 
 export function Button(props: ButtonProps) {
   const {
-    variant      = 'primary',
-    size         = 'md',
-    loading      = false,
-    disabled     = false,
+    variant = 'primary',
+    size = 'md',
+    loading = false,
+    disabled = false,
     icon,
     iconPosition = 'left',
     className,
@@ -141,23 +136,20 @@ export function Button(props: ButtonProps) {
   } = props
 
   const isDisabled = disabled || loading
-  const classes    = cn(base, variants[variant], sizes[size], className)
+  const classes = cn(base, variants[variant], sizes[size], className)
 
   const content = (
     <>
       {loading && <Spinner />}
-      {!loading && icon && iconPosition === 'left' && (
-        <span aria-hidden="true">{icon}</span>
-      )}
+      {!loading && icon && iconPosition === 'left' && <span aria-hidden="true">{icon}</span>}
       <span>{children}</span>
-      {!loading && icon && iconPosition === 'right' && (
-        <span aria-hidden="true">{icon}</span>
-      )}
+      {!loading && icon && iconPosition === 'right' && <span aria-hidden="true">{icon}</span>}
     </>
   )
 
   if (href !== undefined) {
-    const isExternal = href.startsWith('http') || href.startsWith('https') || href.startsWith('wa.me')
+    const isExternal =
+      href.startsWith('http') || href.startsWith('https') || href.startsWith('wa.me')
     return (
       <Link
         href={href}

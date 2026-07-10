@@ -35,16 +35,16 @@ import type { Variants } from 'framer-motion'
 export type AnimationVariant = 'fadeUp' | 'fadeIn' | 'blurUp' | 'scaleUp' | 'slideUp'
 
 interface AnimationWrapperProps {
-  variant?:   AnimationVariant
+  variant?: AnimationVariant
   /** Additional delay in seconds before the animation starts */
-  delay?:     number
+  delay?: number
   /** Intersection threshold — 0.0 to 1.0. Default: 0.15 */
   threshold?: number
   /** Animate only the first time the element enters view. Default: true */
-  once?:      boolean
+  once?: boolean
   className?: string
-  children:   ReactNode
-  as?:        'div' | 'li' | 'article' | 'section' | 'header' | 'footer' | 'span'
+  children: ReactNode
+  as?: 'div' | 'li' | 'article' | 'section' | 'header' | 'footer' | 'span'
 }
 
 // ─── Variant factories ─────────────────────────────────────────
@@ -53,42 +53,55 @@ interface AnimationWrapperProps {
 
 const variantFactories: Record<AnimationVariant, (delay: number) => Variants> = {
   fadeUp: (delay) => ({
-    hidden:  { opacity: 0, y: 20, filter: 'blur(4px)' },
-    visible: { opacity: 1, y: 0,  filter: 'blur(0px)',
-      transition: { duration: DURATION.slow,       ease: EASE.outExpo, delay } },
+    hidden: { opacity: 0, y: 20, filter: 'blur(4px)' },
+    visible: {
+      opacity: 1,
+      y: 0,
+      filter: 'blur(0px)',
+      transition: { duration: DURATION.slow, ease: EASE.outExpo, delay },
+    },
   }),
   fadeIn: (delay) => ({
-    hidden:  { opacity: 0 },
-    visible: { opacity: 1,
-      transition: { duration: DURATION.medium,     ease: EASE.smooth,  delay } },
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: DURATION.medium, ease: EASE.smooth, delay } },
   }),
   blurUp: (delay) => ({
-    hidden:  { opacity: 0, y: 30, filter: 'blur(8px)' },
-    visible: { opacity: 1, y: 0,  filter: 'blur(0px)',
-      transition: { duration: DURATION.deliberate, ease: EASE.outExpo, delay } },
+    hidden: { opacity: 0, y: 30, filter: 'blur(8px)' },
+    visible: {
+      opacity: 1,
+      y: 0,
+      filter: 'blur(0px)',
+      transition: { duration: DURATION.deliberate, ease: EASE.outExpo, delay },
+    },
   }),
   scaleUp: (delay) => ({
-    hidden:  { opacity: 0, scale: 0.96 },
-    visible: { opacity: 1, scale: 1,
-      transition: { duration: DURATION.medium,     ease: EASE.outExpo, delay } },
+    hidden: { opacity: 0, scale: 0.96 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: { duration: DURATION.medium, ease: EASE.outExpo, delay },
+    },
   }),
   slideUp: (delay) => ({
-    hidden:  { opacity: 0, y: 40 },
-    visible: { opacity: 1, y: 0,
-      transition: { duration: DURATION.slow,       ease: EASE.outExpo, delay } },
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: DURATION.slow, ease: EASE.outExpo, delay },
+    },
   }),
 }
 
 // ─── Component ────────────────────────────────────────────────
 
 export function AnimationWrapper({
-  variant   = 'fadeUp',
-  delay     = 0,
+  variant = 'fadeUp',
+  delay = 0,
   threshold = 0.15,
-  once      = true,
+  once = true,
   className,
   children,
-  as        = 'div',
+  as = 'div',
 }: AnimationWrapperProps) {
   const shouldReduce = useReducedMotion()
 
@@ -99,7 +112,7 @@ export function AnimationWrapper({
   }
 
   const MotionTag = motion[as]
-  const variants  = variantFactories[variant](delay)
+  const variants = variantFactories[variant](delay)
 
   return (
     <MotionTag

@@ -73,23 +73,19 @@ export default function AboutPage() {
       {/* Studio story */}
       <Section variant="white" labelledBy="about-story-heading">
         <Container>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
-
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-20">
             {/* Copy */}
             <AnimationWrapper variant="fadeUp">
               <div className="flex flex-col gap-6">
-                <h2
-                  id="about-story-heading"
-                  className="type-heading-xl text-text-primary"
-                >
+                <h2 id="about-story-heading" className="type-heading-xl text-text-primary">
                   A studio built on a simple belief.
                 </h2>
 
-                <div className="flex flex-col gap-4 type-body-lg text-text-muted leading-relaxed">
+                <div className="type-body-lg flex flex-col gap-4 leading-relaxed text-text-muted">
                   <p>
                     Every business deserves a website that works as hard as the people behind it.
-                    Not a template. Not an afterthought. A carefully built digital presence
-                    that earns trust before a word is spoken.
+                    Not a template. Not an afterthought. A carefully built digital presence that
+                    earns trust before a word is spoken.
                   </p>
                   <p>
                     Every project is approached with the same level of care — from the first
@@ -97,9 +93,8 @@ export default function AboutPage() {
                     Code is clean. Communication is direct.
                   </p>
                   <p>
-                    The goal is not to produce as many websites as possible.
-                    The goal is to produce websites that make a difference for the businesses
-                    they represent.
+                    The goal is not to produce as many websites as possible. The goal is to produce
+                    websites that make a difference for the businesses they represent.
                   </p>
                 </div>
               </div>
@@ -109,14 +104,13 @@ export default function AboutPage() {
             <StaggerWrapper as="ul" speed="normal" className="flex flex-col gap-5">
               {brandValues.map((value) => (
                 <AnimationWrapper key={value.title} variant="fadeUp" as="li">
-                  <div className="flex flex-col gap-2 p-5 rounded-xl bg-bg-secondary border border-border">
+                  <div className="flex flex-col gap-2 rounded-xl border border-border bg-bg-secondary p-5">
                     <h3 className="type-heading-sm text-text-primary">{value.title}</h3>
-                    <p className="type-body text-text-muted leading-relaxed">{value.body}</p>
+                    <p className="type-body leading-relaxed text-text-muted">{value.body}</p>
                   </div>
                 </AnimationWrapper>
               ))}
             </StaggerWrapper>
-
           </div>
         </Container>
       </Section>
@@ -126,27 +120,23 @@ export default function AboutPage() {
         <Container narrow>
           <AnimationWrapper variant="fadeUp">
             <div className="flex flex-col gap-8">
-              <h2
-                id="about-approach-heading"
-                className="type-heading-xl text-text-primary"
-              >
+              <h2 id="about-approach-heading" className="type-heading-xl text-text-primary">
                 How we think about design.
               </h2>
 
-              <div className="flex flex-col gap-5 type-body-lg text-text-muted leading-relaxed">
+              <div className="type-body-lg flex flex-col gap-5 leading-relaxed text-text-muted">
                 <p>
-                  A website is not a piece of art. It is a business tool.
-                  Beautiful design matters — but only when it serves the visitor and moves
-                  them toward a decision.
+                  A website is not a piece of art. It is a business tool. Beautiful design matters —
+                  but only when it serves the visitor and moves them toward a decision.
                 </p>
                 <p>
-                  Every element on a page either earns its place or gets removed.
-                  Every section answers a question the visitor is silently asking.
-                  Every CTA reduces friction rather than creating it.
+                  Every element on a page either earns its place or gets removed. Every section
+                  answers a question the visitor is silently asking. Every CTA reduces friction
+                  rather than creating it.
                 </p>
                 <p>
-                  This is what we mean by design that builds trust.
-                  Not visual decoration — strategic clarity.
+                  This is what we mean by design that builds trust. Not visual decoration —
+                  strategic clarity.
                 </p>
               </div>
             </div>

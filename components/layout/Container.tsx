@@ -20,19 +20,19 @@ import type { ReactNode } from 'react'
 
 interface ContainerProps {
   /** Constrain to reading width (~720px) for long-form text */
-  narrow?:    boolean
+  narrow?: boolean
   className?: string
-  children:   ReactNode
-  as?:        'div' | 'section' | 'article' | 'header' | 'footer' | 'main'
+  children: ReactNode
+  as?: 'div' | 'section' | 'article' | 'header' | 'footer' | 'main'
 }
 
 // ─── Component ────────────────────────────────────────────────
 
 export function Container({
-  narrow    = false,
+  narrow = false,
   className,
   children,
-  as: Tag   = 'div',
+  as: Tag = 'div',
 }: ContainerProps) {
   return (
     <Tag

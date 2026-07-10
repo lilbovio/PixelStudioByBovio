@@ -19,12 +19,12 @@ import type { Variants, Transition } from 'framer-motion'
    ───────────────────────────────────────────────────────────────── */
 
 export const DURATION = {
-  instant:    0.10,
-  fast:       0.15,
-  normal:     0.24,
-  medium:     0.35,
-  slow:       0.50,
-  deliberate: 0.70,
+  instant: 0.1,
+  fast: 0.15,
+  normal: 0.24,
+  medium: 0.35,
+  slow: 0.5,
+  deliberate: 0.7,
 } as const
 
 /* ─────────────────────────────────────────────────────────────────
@@ -34,11 +34,11 @@ export const DURATION = {
 
 export const EASE = {
   /** General UI transitions — feels natural */
-  smooth:  [0.25, 0.46, 0.45, 0.94] as const,
+  smooth: [0.25, 0.46, 0.45, 0.94] as const,
   /** Scroll reveals — fast start, gentle landing into place */
-  outExpo: [0.16, 1.00, 0.30, 1.00] as const,
+  outExpo: [0.16, 1.0, 0.3, 1.0] as const,
   /** Panel open/close, modal transitions */
-  inOut:   [0.40, 0.00, 0.20, 1.00] as const,
+  inOut: [0.4, 0.0, 0.2, 1.0] as const,
 } as const
 
 /* ─────────────────────────────────────────────────────────────────
@@ -208,7 +208,7 @@ export const staggerContainerSlow: Variants = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.10,
+      staggerChildren: 0.1,
       delayChildren: 0.1,
     },
   },
@@ -228,7 +228,7 @@ const heroItemTransition = (delay: number): Transition => ({
 
 export const heroHeadline: Variants = {
   hidden: { opacity: 0, y: 24, filter: 'blur(6px)' },
-  visible: { opacity: 1, y: 0, filter: 'blur(0px)', transition: heroItemTransition(0.10) },
+  visible: { opacity: 1, y: 0, filter: 'blur(0px)', transition: heroItemTransition(0.1) },
 }
 
 export const heroParagraph: Variants = {
@@ -248,7 +248,12 @@ export const heroSecondaryBtn: Variants = {
 
 export const heroVisual: Variants = {
   hidden: { opacity: 0, y: 40, filter: 'blur(10px)' },
-  visible: { opacity: 1, y: 0, filter: 'blur(0px)', transition: { duration: DURATION.deliberate, ease: EASE.outExpo, delay: 0.50 } },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: 'blur(0px)',
+    transition: { duration: DURATION.deliberate, ease: EASE.outExpo, delay: 0.5 },
+  },
 }
 
 /* ─────────────────────────────────────────────────────────────────
@@ -282,13 +287,23 @@ export const navbarScrolled: Variants = {
 export const modalOverlay: Variants = {
   hidden: { opacity: 0 },
   visible: { opacity: 1, transition: { duration: DURATION.normal, ease: EASE.smooth } },
-  exit:    { opacity: 0, transition: { duration: DURATION.fast,   ease: EASE.smooth } },
+  exit: { opacity: 0, transition: { duration: DURATION.fast, ease: EASE.smooth } },
 }
 
 export const modalContent: Variants = {
-  hidden:  { opacity: 0, scale: 0.96, y: 12 },
-  visible: { opacity: 1, scale: 1,    y: 0,  transition: { duration: DURATION.medium, ease: EASE.outExpo } },
-  exit:    { opacity: 0, scale: 0.96, y: 8,  transition: { duration: DURATION.fast,   ease: EASE.smooth  } },
+  hidden: { opacity: 0, scale: 0.96, y: 12 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    y: 0,
+    transition: { duration: DURATION.medium, ease: EASE.outExpo },
+  },
+  exit: {
+    opacity: 0,
+    scale: 0.96,
+    y: 8,
+    transition: { duration: DURATION.fast, ease: EASE.smooth },
+  },
 }
 
 /* ─────────────────────────────────────────────────────────────────
@@ -296,15 +311,15 @@ export const modalContent: Variants = {
    ───────────────────────────────────────────────────────────────── */
 
 export const mobileMenuOverlay: Variants = {
-  hidden:  { opacity: 0 },
+  hidden: { opacity: 0 },
   visible: { opacity: 1, transition: { duration: DURATION.normal, ease: EASE.smooth } },
-  exit:    { opacity: 0, transition: { duration: DURATION.fast,   ease: EASE.smooth } },
+  exit: { opacity: 0, transition: { duration: DURATION.fast, ease: EASE.smooth } },
 }
 
 export const mobileMenuPanel: Variants = {
-  hidden:  { opacity: 0, y: -8 },
-  visible: { opacity: 1, y: 0,  transition: { duration: DURATION.medium, ease: EASE.outExpo } },
-  exit:    { opacity: 0, y: -8, transition: { duration: DURATION.fast,   ease: EASE.inOut  } },
+  hidden: { opacity: 0, y: -8 },
+  visible: { opacity: 1, y: 0, transition: { duration: DURATION.medium, ease: EASE.outExpo } },
+  exit: { opacity: 0, y: -8, transition: { duration: DURATION.fast, ease: EASE.inOut } },
 }
 
 /* ─────────────────────────────────────────────────────────────────
@@ -314,14 +329,17 @@ export const mobileMenuPanel: Variants = {
    ───────────────────────────────────────────────────────────────── */
 
 export const faqContent: Variants = {
-  hidden:  { opacity: 0 },
-  visible: { opacity: 1, transition: { duration: DURATION.normal, ease: EASE.smooth, delay: 0.05 } },
-  exit:    { opacity: 0, transition: { duration: DURATION.fast,   ease: EASE.smooth } },
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { duration: DURATION.normal, ease: EASE.smooth, delay: 0.05 },
+  },
+  exit: { opacity: 0, transition: { duration: DURATION.fast, ease: EASE.smooth } },
 }
 
 export const faqIcon: Variants = {
   closed: { rotate: 0 },
-  open:   { rotate: 180, transition: { duration: DURATION.normal, ease: EASE.smooth } },
+  open: { rotate: 180, transition: { duration: DURATION.normal, ease: EASE.smooth } },
 }
 
 /* ─────────────────────────────────────────────────────────────────
@@ -329,9 +347,19 @@ export const faqIcon: Variants = {
    ───────────────────────────────────────────────────────────────── */
 
 export const whatsappButton: Variants = {
-  hidden:  { opacity: 0, scale: 0.8, y: 16 },
-  visible: { opacity: 1, scale: 1,   y: 0,  transition: { duration: DURATION.medium, ease: EASE.outExpo } },
-  exit:    { opacity: 0, scale: 0.8, y: 16, transition: { duration: DURATION.fast,   ease: EASE.smooth  } },
+  hidden: { opacity: 0, scale: 0.8, y: 16 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    y: 0,
+    transition: { duration: DURATION.medium, ease: EASE.outExpo },
+  },
+  exit: {
+    opacity: 0,
+    scale: 0.8,
+    y: 16,
+    transition: { duration: DURATION.fast, ease: EASE.smooth },
+  },
 }
 
 /* ─────────────────────────────────────────────────────────────────
@@ -340,13 +368,29 @@ export const whatsappButton: Variants = {
    ───────────────────────────────────────────────────────────────── */
 
 export const cardHover = {
-  rest:  { y: 0,  boxShadow: 'var(--shadow-soft)',   transition: { duration: DURATION.normal, ease: EASE.smooth } },
-  hover: { y: -4, boxShadow: 'var(--shadow-medium)', transition: { duration: DURATION.normal, ease: EASE.smooth } },
+  rest: {
+    y: 0,
+    boxShadow: 'var(--shadow-soft)',
+    transition: { duration: DURATION.normal, ease: EASE.smooth },
+  },
+  hover: {
+    y: -4,
+    boxShadow: 'var(--shadow-medium)',
+    transition: { duration: DURATION.normal, ease: EASE.smooth },
+  },
 } as const
 
 export const projectCardHover = {
-  rest:  { y: 0,  boxShadow: 'var(--shadow-soft)',     transition: { duration: DURATION.normal, ease: EASE.smooth } },
-  hover: { y: -6, boxShadow: 'var(--shadow-elevated)', transition: { duration: DURATION.normal, ease: EASE.smooth } },
+  rest: {
+    y: 0,
+    boxShadow: 'var(--shadow-soft)',
+    transition: { duration: DURATION.normal, ease: EASE.smooth },
+  },
+  hover: {
+    y: -6,
+    boxShadow: 'var(--shadow-elevated)',
+    transition: { duration: DURATION.normal, ease: EASE.smooth },
+  },
 } as const
 
 /* ─────────────────────────────────────────────────────────────────
@@ -376,7 +420,12 @@ export const imageReveal: Variants = {
    ───────────────────────────────────────────────────────────────── */
 
 export const toastEnter: Variants = {
-  hidden:  { opacity: 0, y: 16, scale: 0.96 },
-  visible: { opacity: 1, y: 0,  scale: 1,   transition: { duration: DURATION.medium, ease: EASE.outExpo } },
-  exit:    { opacity: 0, y: 8,              transition: { duration: DURATION.fast,   ease: EASE.smooth  } },
+  hidden: { opacity: 0, y: 16, scale: 0.96 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: DURATION.medium, ease: EASE.outExpo },
+  },
+  exit: { opacity: 0, y: 8, transition: { duration: DURATION.fast, ease: EASE.smooth } },
 }

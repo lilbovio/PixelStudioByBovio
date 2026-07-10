@@ -9,20 +9,20 @@
  *   - Bottom row gets a clean centered copyright treatment
  */
 
-import Link              from 'next/link'
+import Link from 'next/link'
 import { Instagram, Music2, Mail, MapPin } from 'lucide-react'
-import { navItems }      from '@/constants/navigation'
-import { site }          from '@/constants/site'
+import { navItems } from '@/constants/navigation'
+import { site } from '@/constants/site'
 import { buildWhatsAppURL } from '@/lib/whatsapp'
-import { Logomark }      from '@/components/icons/Logomark'
-import { cn }            from '@/lib/cn'
+import { Logomark } from '@/components/icons/Logomark'
+import { cn } from '@/lib/cn'
 
 // ─── Social link helper ───────────────────────────────────────
 
 interface SocialLinkProps {
-  href:      string
-  label:     string
-  children:  React.ReactNode
+  href: string
+  label: string
+  children: React.ReactNode
 }
 
 function SocialLink({ href, label, children }: SocialLinkProps) {
@@ -34,11 +34,11 @@ function SocialLink({ href, label, children }: SocialLinkProps) {
       rel="noopener noreferrer"
       aria-label={label}
       className={cn(
-        'flex items-center justify-center size-8 rounded-lg',
-        'text-white/40 hover:text-white hover:bg-white/8',
+        'flex size-8 items-center justify-center rounded-lg',
+        'text-white/40 hover:bg-white/8 hover:text-white',
         'border border-white/8',
-        'transition-colors duration-fast ease-smooth',
-        'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/40',
+        'duration-fast transition-colors ease-smooth',
+        'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/40'
       )}
     >
       {children}
@@ -49,8 +49,8 @@ function SocialLink({ href, label, children }: SocialLinkProps) {
 // ─── Component ────────────────────────────────────────────────
 
 export function Footer() {
-  const currentYear  = new Date().getFullYear()
-  const whatsappUrl  = buildWhatsAppURL()
+  const currentYear = new Date().getFullYear()
+  const whatsappUrl = buildWhatsAppURL()
 
   return (
     <footer
@@ -60,28 +60,29 @@ export function Footer() {
     >
       {/* Subtle top continuation glow from FinalCTA */}
       <div
-        className="absolute top-0 inset-x-0 h-px"
-        style={{ background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.08) 30%, rgba(255,255,255,0.08) 70%, transparent)' }}
+        className="absolute inset-x-0 top-0 h-px"
+        style={{
+          background:
+            'linear-gradient(90deg, transparent, rgba(255,255,255,0.08) 30%, rgba(255,255,255,0.08) 70%, transparent)',
+        }}
         aria-hidden="true"
       />
 
       <div className="mx-auto w-full max-w-container px-5 sm:px-8 lg:px-12">
-
         {/* ── Top row ──────────────────────────────────────── */}
-        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 pb-10 border-b border-dark-border">
-
+        <div className="grid grid-cols-1 gap-10 border-b border-dark-border pb-10 sm:grid-cols-2 lg:grid-cols-3">
           {/* Brand column */}
           <div className="flex flex-col gap-5">
             <Link href="/" aria-label="Pixel Studio by Bovio — Home" className="w-fit">
               <Logomark variant="full" scheme="light" className="text-[1rem]" />
             </Link>
-            <p className="type-body text-white/40 max-w-[260px] leading-relaxed">
+            <p className="type-body max-w-[260px] leading-relaxed text-white/40">
               {site.description}
             </p>
 
             {/* Social icons */}
             {(site.social.instagram || site.social.tiktok) && (
-              <div className="flex items-center gap-2 mt-1">
+              <div className="mt-1 flex items-center gap-2">
                 <SocialLink href={site.social.instagram} label="Follow us on Instagram">
                   <Instagram size={16} strokeWidth={1.75} aria-hidden="true" />
                 </SocialLink>
@@ -94,7 +95,7 @@ export function Footer() {
 
           {/* Navigation column */}
           <nav aria-label="Footer navigation">
-            <p className="type-label text-white/25 mb-5">Navigation</p>
+            <p className="type-label mb-5 text-white/25">Navigation</p>
             <ul role="list" className="flex flex-col gap-3">
               {navItems.map((item) => (
                 <li key={item.href}>
@@ -103,8 +104,8 @@ export function Footer() {
                     className={cn(
                       'type-body text-white/50',
                       'hover:text-white/80',
-                      'transition-colors duration-fast ease-smooth',
-                      'focus-visible:outline-none focus-visible:text-white',
+                      'duration-fast transition-colors ease-smooth',
+                      'focus-visible:text-white focus-visible:outline-none'
                     )}
                   >
                     {item.label}
@@ -116,9 +117,8 @@ export function Footer() {
 
           {/* Contact column */}
           <div>
-            <p className="type-label text-white/25 mb-5">Contact</p>
+            <p className="type-label mb-5 text-white/25">Contact</p>
             <ul role="list" className="flex flex-col gap-3.5">
-
               {/* WhatsApp */}
               <li>
                 <a
@@ -126,7 +126,7 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Contact us on WhatsApp"
-                  className="group flex items-center gap-2.5 type-body text-white/50 hover:text-white/80 transition-colors duration-fast ease-smooth"
+                  className="group type-body duration-fast flex items-center gap-2.5 text-white/50 transition-colors ease-smooth hover:text-white/80"
                 >
                   <svg
                     aria-hidden="true"
@@ -146,7 +146,7 @@ export function Footer() {
                   <a
                     href={`mailto:${site.email}`}
                     aria-label={`Email us at ${site.email}`}
-                    className="flex items-center gap-2.5 type-body text-white/50 hover:text-white/80 transition-colors duration-fast ease-smooth"
+                    className="type-body duration-fast flex items-center gap-2.5 text-white/50 transition-colors ease-smooth hover:text-white/80"
                   >
                     <Mail size={15} strokeWidth={1.75} aria-hidden="true" className="shrink-0" />
                     {site.email}
@@ -156,7 +156,7 @@ export function Footer() {
 
               {/* Location */}
               <li>
-                <span className="flex items-center gap-2.5 type-body text-white/30">
+                <span className="type-body flex items-center gap-2.5 text-white/30">
                   <MapPin size={15} strokeWidth={1.75} aria-hidden="true" className="shrink-0" />
                   {site.location}
                 </span>
@@ -166,15 +166,12 @@ export function Footer() {
         </div>
 
         {/* ── Bottom row ───────────────────────────────────── */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 pt-8">
+        <div className="flex flex-col items-start justify-between gap-2 pt-8 sm:flex-row sm:items-center">
           <p className="type-caption text-white/25">
             &copy; {currentYear} {site.name}. All rights reserved.
           </p>
-          <p className="type-caption text-white/15">
-            Designed &amp; built in Guadalajara, Mexico.
-          </p>
+          <p className="type-caption text-white/15">Designed &amp; built in Guadalajara, Mexico.</p>
         </div>
-
       </div>
     </footer>
   )

@@ -25,28 +25,28 @@ import { cn } from '@/lib/cn'
 type SkeletonVariant = 'line' | 'block' | 'circle'
 
 interface SkeletonLoaderProps {
-  variant?:   SkeletonVariant
-  width?:     string | number
+  variant?: SkeletonVariant
+  width?: string | number
   className?: string
   /** aria-label for screen readers */
-  label?:     string
+  label?: string
 }
 
 // ─── Styles ───────────────────────────────────────────────────
 
 const variants: Record<SkeletonVariant, string> = {
-  line:   'h-4 rounded-sm',
-  block:  'h-40 rounded-md',
+  line: 'h-4 rounded-sm',
+  block: 'h-40 rounded-md',
   circle: 'rounded-full aspect-square',
 }
 
 // ─── Component ────────────────────────────────────────────────
 
 export function SkeletonLoader({
-  variant   = 'line',
+  variant = 'line',
   width,
   className,
-  label     = 'Loading…',
+  label = 'Loading…',
 }: SkeletonLoaderProps) {
   return (
     <div
@@ -65,7 +65,7 @@ export function SkeletonLoader({
  * Pass `lines` to control how many lines appear.
  */
 interface SkeletonTextProps {
-  lines?:     number
+  lines?: number
   className?: string
 }
 
@@ -95,7 +95,10 @@ export function SkeletonCard({ className }: { className?: string }) {
     <div
       role="status"
       aria-label="Loading…"
-      className={cn('rounded-md border border-border bg-surface p-6 flex flex-col gap-4', className)}
+      className={cn(
+        'flex flex-col gap-4 rounded-md border border-border bg-surface p-6',
+        className
+      )}
     >
       <SkeletonLoader variant="circle" className="size-10" />
       <SkeletonLoader variant="line" width="60%" />

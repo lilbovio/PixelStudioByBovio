@@ -26,34 +26,34 @@ type SectionVariant = 'white' | 'gray' | 'dark'
 type SectionPadding = 'default' | 'none' | 'top-only' | 'bottom-only'
 
 interface SectionProps {
-  variant?:     SectionVariant
-  padding?:     SectionPadding
-  id?:          string
-  labelledBy?:  string
-  className?:   string
-  children:     ReactNode
+  variant?: SectionVariant
+  padding?: SectionPadding
+  id?: string
+  labelledBy?: string
+  className?: string
+  children: ReactNode
 }
 
 // ─── Styles ───────────────────────────────────────────────────
 
 const variantClasses: Record<SectionVariant, string> = {
   white: 'section-white',
-  gray:  'section-gray',
-  dark:  'section-dark',
+  gray: 'section-gray',
+  dark: 'section-dark',
 }
 
 const paddingClasses: Record<SectionPadding, string> = {
-  default:     'section-padding',
-  none:        '',
-  'top-only':  'pt-section-sm sm:pt-section-md lg:pt-section-lg xl:pt-section-xl',
-  'bottom-only':'pb-section-sm sm:pb-section-md lg:pb-section-lg xl:pb-section-xl',
+  default: 'section-padding',
+  none: '',
+  'top-only': 'pt-section-sm sm:pt-section-md lg:pt-section-lg xl:pt-section-xl',
+  'bottom-only': 'pb-section-sm sm:pb-section-md lg:pb-section-lg xl:pb-section-xl',
 }
 
 // ─── Component ────────────────────────────────────────────────
 
 export function Section({
-  variant    = 'white',
-  padding    = 'default',
+  variant = 'white',
+  padding = 'default',
   id,
   labelledBy,
   className,

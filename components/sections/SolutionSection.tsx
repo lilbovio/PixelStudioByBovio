@@ -29,14 +29,9 @@ const pillars = [
 
 export function SolutionSection() {
   return (
-    <Section
-      id="solution"
-      variant="white"
-      labelledBy="solution-heading"
-    >
+    <Section id="solution" variant="white" labelledBy="solution-heading">
       <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
           {/* ── Left — copy ──────────────────────────────────────── */}
           <div className="flex flex-col gap-8">
             <AnimationWrapper variant="fadeUp">
@@ -59,15 +54,11 @@ export function SolutionSection() {
           </div>
 
           {/* ── Right — value pillars ─────────────────────────────── */}
-          <StaggerWrapper
-            as="ul"
-            speed="normal"
-            className="flex flex-col divide-y divide-border"
-          >
+          <StaggerWrapper as="ul" speed="normal" className="flex flex-col divide-y divide-border">
             {pillars.map((pillar, i) => (
               <AnimationWrapper key={i} variant="fadeUp" as="li">
                 <div className="flex items-start gap-4 py-4 first:pt-0 last:pb-0">
-                  <div className="flex items-center justify-center w-6 h-6 rounded-md bg-success/10 shrink-0 mt-0.5">
+                  <div className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-success/10">
                     <CheckCircle2
                       size={14}
                       strokeWidth={2}
@@ -75,12 +66,11 @@ export function SolutionSection() {
                       aria-hidden="true"
                     />
                   </div>
-                  <p className="type-body text-text-secondary leading-relaxed">{pillar}</p>
+                  <p className="type-body leading-relaxed text-text-secondary">{pillar}</p>
                 </div>
               </AnimationWrapper>
             ))}
           </StaggerWrapper>
-
         </div>
       </Container>
     </Section>

@@ -20,6 +20,7 @@ The site needs maximum SEO performance, fast page loads, and a production-grade 
 Use Next.js 15 with the App Router (not Pages Router).
 
 **Reasoning:**
+
 - App Router enables React Server Components by default, eliminating unnecessary JavaScript for static sections
 - Built-in Metadata API handles per-page SEO without third-party packages
 - `next/image` provides automatic WebP/AVIF conversion and lazy loading with zero configuration
@@ -28,10 +29,12 @@ Use Next.js 15 with the App Router (not Pages Router).
 - TypeScript support is first-class
 
 **Trade-offs:**
+
 - App Router has a steeper learning curve than Pages Router
 - Some third-party libraries have incomplete RSC compatibility — evaluated before adoption
 
 **Rejected alternatives:**
+
 - Astro: Less React ecosystem familiarity; no team precedent
 - Remix: Good option but less Vercel-native; smaller community for this use case
 - Vite + React SPA: No SSR, poor baseline SEO
@@ -50,12 +53,14 @@ TypeScript can be configured at varying strictness levels. Looser settings are f
 TypeScript `strict: true` is non-negotiable.
 
 **Reasoning:**
+
 - The project is designed to be maintained for years
 - Strict mode catches bugs at compile time that would otherwise surface in production
 - It forces proper interface definitions for all data (which directly enables CMS migration later)
 - The `noUncheckedIndexedAccess` flag prevents the most common array access bugs
 
 **Trade-offs:**
+
 - Slightly slower initial development
 - Requires explicit handling of `null` and `undefined` cases
 
@@ -73,6 +78,7 @@ Multiple styling strategies are viable. CSS Modules, CSS-in-JS, Tailwind, or pla
 Tailwind CSS v4 as the sole styling mechanism, with design tokens expressed as CSS custom properties in `globals.css`.
 
 **Reasoning:**
+
 - Zero runtime overhead — all CSS is generated at build time
 - Tailwind v4's native CSS variable support aligns perfectly with the token system defined in `DesignSystem.md`
 - Consistent spacing/typography enforcement — using arbitrary values triggers ESLint
@@ -80,10 +86,12 @@ Tailwind CSS v4 as the sole styling mechanism, with design tokens expressed as C
 - No context switching between CSS files and JSX
 
 **Trade-offs:**
+
 - Long `className` strings for complex components — mitigated by `cn()` utility and component extraction
 - Tailwind v4 is newer; some ecosystem plugins may lag
 
 **Rejected alternatives:**
+
 - CSS Modules: Good isolation but verbose; no built-in token enforcement
 - styled-components / Emotion: Runtime overhead; poor RSC compatibility
 - Zero-runtime CSS-in-JS (Linaria): Complex setup, smaller community
@@ -102,6 +110,7 @@ The motion system described in `MotionLanguage.md` requires scroll-triggered ani
 Framer Motion as the animation library. CSS transitions are used only for simple hover states (defined in Tailwind).
 
 **Reasoning:**
+
 - `whileInView` provides scroll-triggered animations with built-in once/repeat control
 - `AnimatePresence` handles mount/unmount animations (FAQ, modal)
 - `useReducedMotion` hook enables `prefers-reduced-motion` support with one line
@@ -110,11 +119,13 @@ Framer Motion as the animation library. CSS transitions are used only for simple
 - Bundle size is acceptable given the animation requirements (~45KB gzipped for core)
 
 **Trade-offs:**
+
 - Client Components required wherever `motion.*` is used
 - Additional ~45KB to the JS bundle
 - Animations must be carefully isolated to avoid unnecessary hydration
 
 **Rejected alternatives:**
+
 - GSAP: More powerful but larger; licensing for commercial use
 - Auto-animate: Less control over timing/easing
 - Pure CSS: Insufficient for scroll-triggered stagger and `height: auto` animations
@@ -133,6 +144,7 @@ The site has no dynamic content at launch. Services, projects, FAQs, and navigat
 All content is stored as typed TypeScript constants in `constants/`. No database, no CMS, no API at launch.
 
 **Reasoning:**
+
 - Eliminates an entire class of infrastructure complexity
 - 100% static output means perfect CDN caching
 - TypeScript interfaces defined in `types/` match what a future CMS would return
@@ -140,6 +152,7 @@ All content is stored as typed TypeScript constants in `constants/`. No database
 - Zero cost to operate
 
 **Trade-offs:**
+
 - Content updates require a code deployment
 - Non-technical team members cannot edit content
 
@@ -160,6 +173,7 @@ The PRD specifies Geist or Inter. Both are excellent choices. A decision was nee
 Geist (Vercel's typeface), loaded via `next/font/local`.
 
 **Reasoning:**
+
 - Geist is a variable font — one file covers all weights with perfect rendering
 - `next/font` with Geist eliminates CLS entirely (font dimensions are known at build time)
 - The weight variation from 400 to 800 creates all the hierarchy defined in the type scale
@@ -167,6 +181,7 @@ Geist (Vercel's typeface), loaded via `next/font/local`.
 - No external font requests — no privacy/CSP concerns
 
 **Trade-offs:**
+
 - Less universal recognition than Inter among designers
 - If the brand ever needs a display or serif typeface for contrast, this will need revisiting
 
@@ -184,18 +199,21 @@ Next.js 15 makes Server Components the default but allows `"use client"` anywher
 Server Components are the default. Client Components (`"use client"`) are added only at the **leaf node** — the smallest possible component that actually needs interactivity.
 
 **Pattern:**
+
 ```
 ServicesSection (Server) → ServiceCard (Server) → CardHover (Client, just wraps motion.div)
 FAQSection (Server) → FAQList (Server) → FAQItem (Client, has open/close state)
 ```
 
 **Reasoning:**
+
 - Minimizes JavaScript shipped to browser
 - Server Components enable direct data access without client-side fetch
 - Preserves static rendering for the majority of the page
 - Framer Motion `motion.*` elements are Client Components — this is unavoidable but containable
 
 **Trade-offs:**
+
 - Requires discipline — easy to accidentally add `"use client"` too high in the tree
 - Some patterns (context providers) require Client wrappers around Server content
 
@@ -213,6 +231,7 @@ The primary conversion mechanism could be an email contact form, a booking syste
 WhatsApp is the primary and dominant conversion channel. Contact form is secondary and optional.
 
 **Reasoning:**
+
 - Target audience (Latin American business owners) has extremely high WhatsApp adoption
 - WhatsApp conversations are faster, more personal, and have higher response rates than email for service inquiries
 - No server infrastructure required at launch (no form backend, no email service)
@@ -220,6 +239,7 @@ WhatsApp is the primary and dominant conversion channel. Contact form is seconda
 - Conversations happen in a context (WhatsApp) where clients feel comfortable
 
 **Trade-offs:**
+
 - Requires a dedicated business WhatsApp number
 - No automatic lead tracking without additional tooling
 - Phone number must be stored securely (environment variable)
@@ -241,12 +261,14 @@ Modern React projects often install Zustand, Jotai, or Redux. The question is wh
 No global state management library. State lives in components via `useState` and `useReducer` where needed.
 
 **Reasoning:**
+
 - The site is predominantly static
 - Interactive state is local: FAQ accordion (open item), mobile menu (open/closed), modal (open/closed)
 - None of this state needs to be shared across distant components
 - Adding a global store would introduce unnecessary complexity and bundle weight
 
 **Revisit if:**
+
 - A client portal is added
 - Multi-step forms with shared state are needed
 - Server state synchronization (SWR/React Query) becomes necessary
@@ -265,6 +287,7 @@ Analytics is needed to understand visitor behavior. Multiple options exist.
 Use Vercel Analytics and Speed Insights at launch. Google Analytics is prepared but not activated.
 
 **Reasoning:**
+
 - Vercel Analytics requires no cookie banner in most jurisdictions (privacy-first architecture)
 - Speed Insights provides real-user Core Web Vitals data — directly actionable
 - Both are injected via official Next.js components with zero configuration
@@ -287,6 +310,7 @@ npm, yarn, and pnpm are all viable. A choice must be made and enforced.
 pnpm exclusively. A `.npmrc` or `package.json` `engines` field can enforce this.
 
 **Reasoning:**
+
 - Strict hoisting prevents phantom dependency bugs
 - Significantly faster installs via content-addressable storage
 - Vercel supports pnpm natively via `packageManager` field in `package.json`
@@ -306,12 +330,14 @@ At launch, there are no real client projects. The PRD explicitly forbids inventi
 Create 4–6 clearly labeled "design concepts" — hypothetical projects for real industry types (coffee shop, dental clinic, law firm, etc.) — presented honestly as concepts, not client work.
 
 **Reasoning:**
+
 - Demonstrates design capability without dishonesty
 - Clearly labeled "Design Concept" prevents any perception of deception
 - Industry diversity shows range without needing actual clients
 - As real projects are completed, concepts are replaced
 
 **Labels required:**
+
 - "Design Concept" badge on all project cards
 - Project description copy explicitly frames it as a concept
 - No fake company names presented as real clients
@@ -330,6 +356,7 @@ The PRD explicitly mandates mobile-first design. The target audience (Latin Amer
 All CSS is written mobile-first. Desktop styles are layered with `sm:`, `md:`, `lg:` prefixes. No desktop-first breakpoints.
 
 **Tailwind Breakpoints Used:**
+
 ```
 default: 320px+  (mobile)
 sm: 640px+       (tablet)
@@ -344,17 +371,17 @@ Note: The standard Tailwind `md: 768px` breakpoint is de-emphasized. Most layout
 
 ## Open Questions — RESOLVED
 
-| # | Question | Resolution |
-|---|---|---|
-| OQ-001 | WhatsApp business number? | **+52 33 2939 1532** — stored as `5233293915329` in env (wa.me format, no `+` or spaces) |
-| OQ-002 | Domain? | **pixelstudiobybovio.lat** |
-| OQ-003 | Social URLs? | Instagram and TikTok — URLs to be confirmed and added later. Placeholders in `constants/site.ts`. |
-| OQ-004 | Contact form? | **No form.** WhatsApp-only contact. The `/contact` page shows WhatsApp + email only. |
-| OQ-005 | "Book a Discovery Call" button? | **Hidden at launch.** Feature flag `enableBookingCTA: false` in `constants/site.ts`. |
-| OQ-006 | Projects at launch? | **Zero projects.** Real client work will be added over time. Work section shows a designed empty state until first project is added. ADR-012 updated accordingly. |
+| #      | Question                        | Resolution                                                                                                                                                        |
+| ------ | ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| OQ-001 | WhatsApp business number?       | **+52 33 2939 1532** — stored as `5233293915329` in env (wa.me format, no `+` or spaces)                                                                          |
+| OQ-002 | Domain?                         | **pixelstudiobybovio.lat**                                                                                                                                        |
+| OQ-003 | Social URLs?                    | Instagram and TikTok — URLs to be confirmed and added later. Placeholders in `constants/site.ts`.                                                                 |
+| OQ-004 | Contact form?                   | **No form.** WhatsApp-only contact. The `/contact` page shows WhatsApp + email only.                                                                              |
+| OQ-005 | "Book a Discovery Call" button? | **Hidden at launch.** Feature flag `enableBookingCTA: false` in `constants/site.ts`.                                                                              |
+| OQ-006 | Projects at launch?             | **Zero projects.** Real client work will be added over time. Work section shows a designed empty state until first project is added. ADR-012 updated accordingly. |
 
 ---
 
 ## Superseded Decisions
 
-*(None at time of writing. When a decision is reversed or replaced, the original entry is retained here with a note pointing to the superseding ADR.)*
+_(None at time of writing. When a decision is reversed or replaced, the original entry is retained here with a note pointing to the superseding ADR.)_
