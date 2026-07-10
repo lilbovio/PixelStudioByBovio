@@ -1,0 +1,553 @@
+@import "tailwindcss";
+
+/* ═══════════════════════════════════════════════════════════════════
+   PIXEL STUDIO BY BOVIO — DESIGN TOKEN SYSTEM
+   ═══════════════════════════════════════════════════════════════════
+   Architecture:
+     1. @theme   — maps every raw token into Tailwind utility classes
+                   e.g. bg-bg, text-text-primary, shadow-soft, etc.
+     2. :root    — raw CSS custom properties for non-Tailwind use
+     3. Base     — global reset and typographic defaults
+     4. Utilities — hand-written utilities only where Tailwind cannot reach
+
+   Rule: Never hard-code a color, spacing, radius, shadow, or z-value
+   in a component. Always reference a token.
+   See docs/DesignSystem.md for the full specification.
+   ═══════════════════════════════════════════════════════════════════ */
+
+
+/* ───────────────────────────────────────────────────────────────────
+   1. @theme  — Tailwind v4 token registration
+   ─────────────────────────────────────────────────────────────────── */
+
+@theme {
+
+  /* ── Colors ──────────────────────────────────────────────────── */
+
+  /* Backgrounds — warm white, not clinical white */
+  --color-bg:           #fafaf9;
+  --color-bg-secondary: #f5f5f4;
+  --color-bg-tertiary:  #eeeeec;
+
+  /* Surfaces */
+  --color-surface:       #ffffff;
+  --color-surface-raised: #fafaf9;
+  --color-surface-glass: rgba(250, 250, 249, 0.80);
+
+  /* Borders — warm neutral */
+  --color-border:        #e4e4e1;
+  --color-border-subtle: rgba(228, 228, 225, 0.55);
+  --color-border-strong: #c9c9c5;
+
+  /* Text hierarchy — rich near-black, not pure #000 */
+  --color-text-primary:   #111110;
+  --color-text-secondary: #3c3c39;
+  --color-text-muted:     #6c6c68;
+  --color-text-disabled:  #a0a09c;
+  --color-text-inverse:   #fafaf9;
+
+  /* Accent — deep slate blue — single brand color */
+  --color-accent:       #1d4ed8;
+  --color-accent-hover: #1e40af;
+  --color-accent-light: #eff6ff;
+  --color-accent-muted: rgba(29, 78, 216, 0.08);
+
+  /* Buttons */
+  --color-btn-primary:       #111110;
+  --color-btn-primary-hover: #222220;
+  --color-btn-primary-fg:    #fafaf9;
+  --color-btn-secondary-border: #d1d1cc;
+
+  /* Dark section (Final CTA + Footer) */
+  --color-dark:           #0c0c0b;
+  --color-dark-secondary: #161614;
+  --color-dark-surface:   #1a1a18;
+  --color-dark-border:    rgba(255, 255, 255, 0.08);
+  --color-dark-border-strong: rgba(255, 255, 255, 0.14);
+  --color-dark-muted:     rgba(255, 255, 255, 0.45);
+  --color-dark-text:      rgba(255, 255, 255, 0.88);
+
+  /* Semantic states */
+  --color-success:       #059669;
+  --color-success-light: #ecfdf5;
+  --color-warning:       #d97706;
+  --color-warning-light: #fffbeb;
+  --color-error:         #dc2626;
+  --color-error-light:   #fef2f2;
+
+
+  /* ── Spacing (8px base unit) ─────────────────────────────────── */
+  --spacing-section-sm: 4.5rem;  /* 72px  — mobile section padding  */
+  --spacing-section-md: 6rem;    /* 96px  — tablet section padding  */
+  --spacing-section-lg: 7.5rem;  /* 120px — desktop section padding */
+  --spacing-section-xl: 9rem;    /* 144px — large desktop           */
+  --spacing-container:  80rem;   /* 1280px max-width                */
+  --spacing-reading:    45rem;   /* 720px reading width             */
+
+
+  /* ── Border Radius ───────────────────────────────────────────── */
+  --radius-xs:   0.375rem;  /*  6px */
+  --radius-sm:   0.625rem;  /* 10px */
+  --radius-md:   0.875rem;  /* 14px */
+  --radius-lg:   1.25rem;   /* 20px */
+  --radius-xl:   1.5rem;    /* 24px */
+  --radius-2xl:  2rem;      /* 32px */
+  --radius-pill: 9999px;
+
+
+  /* ── Shadows — warm-tinted, layered ─────────────────────────── */
+  --shadow-soft:
+    0 1px 2px  rgba(0, 0, 0, 0.04),
+    0 1px 4px  rgba(0, 0, 0, 0.03);
+  --shadow-medium:
+    0 2px 8px  rgba(0, 0, 0, 0.06),
+    0 4px 16px rgba(0, 0, 0, 0.05);
+  --shadow-elevated:
+    0 4px 16px rgba(0, 0, 0, 0.08),
+    0 8px 32px rgba(0, 0, 0, 0.06),
+    0 1px 3px  rgba(0, 0, 0, 0.04);
+  --shadow-glass:
+    0 1px 2px  rgba(0, 0, 0, 0.04),
+    0 4px 16px rgba(0, 0, 0, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.70);
+  --shadow-navbar:
+    0 1px 0   rgba(0, 0, 0, 0.04),
+    0 4px 24px rgba(0, 0, 0, 0.06);
+
+
+  /* ── Typography: Font sizes with paired line-height ──────────── */
+
+  /* Hero: 42px → 80px */
+  --font-size-hero: clamp(2.625rem, 5.5vw + 0.75rem, 5rem);
+  --line-height-hero: 1.0;
+  --letter-spacing-hero: -0.035em;
+
+  /* Display: 36px → 58px */
+  --font-size-display: clamp(2.25rem, 4.5vw + 0.5rem, 3.625rem);
+  --line-height-display: 1.08;
+  --letter-spacing-display: -0.03em;
+
+  /* Heading XL: 30px → 48px */
+  --font-size-heading-xl: clamp(1.875rem, 3vw + 0.75rem, 3rem);
+  --line-height-heading-xl: 1.15;
+  --letter-spacing-heading-xl: -0.022em;
+
+  /* Heading LG: 26px → 36px */
+  --font-size-heading-lg: clamp(1.625rem, 2vw + 0.5rem, 2.25rem);
+  --line-height-heading-lg: 1.22;
+  --letter-spacing-heading-lg: -0.018em;
+
+  /* Heading MD: 22px → 28px */
+  --font-size-heading-md: clamp(1.375rem, 1.5vw + 0.25rem, 1.75rem);
+  --line-height-heading-md: 1.3;
+  --letter-spacing-heading-md: -0.012em;
+
+  /* Heading SM: 18px → 22px */
+  --font-size-heading-sm: clamp(1.125rem, 1vw + 0.25rem, 1.375rem);
+  --line-height-heading-sm: 1.38;
+  --letter-spacing-heading-sm: -0.008em;
+
+  /* Body LG: 17px → 19px */
+  --font-size-body-lg: clamp(1.0625rem, 0.5vw + 0.85rem, 1.1875rem);
+  --line-height-body-lg: 1.72;
+  --letter-spacing-body-lg: 0em;
+
+  /* Body: 16px (fixed) */
+  --font-size-body: 1rem;
+  --line-height-body: 1.68;
+  --letter-spacing-body: 0em;
+
+  /* Caption: 14px (fixed) */
+  --font-size-caption: 0.875rem;
+  --line-height-caption: 1.55;
+  --letter-spacing-caption: 0.008em;
+
+  /* Label: 11.5px (fixed) — uppercase small caps */
+  --font-size-label: 0.71875rem;
+  --line-height-label: 1.4;
+  --letter-spacing-label: 0.06em;
+
+  /* Button: 15px (fixed) */
+  --font-size-btn: 0.9375rem;
+  --line-height-btn: 1;
+  --letter-spacing-btn: 0.005em;
+
+
+  /* ── Font Weights ─────────────────────────────────────────────── */
+  --font-weight-regular:   400;
+  --font-weight-medium:    500;
+  --font-weight-semibold:  600;
+  --font-weight-bold:      700;
+  --font-weight-extrabold: 800;
+
+
+  /* ── Motion: Durations ───────────────────────────────────────── */
+  --duration-instant:    100ms;
+  --duration-fast:       150ms;
+  --duration-normal:     240ms;
+  --duration-medium:     350ms;
+  --duration-slow:       500ms;
+  --duration-deliberate: 700ms;
+
+
+  /* ── Motion: Easing ──────────────────────────────────────────── */
+  --ease-smooth:   cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-out-expo: cubic-bezier(0.16, 1.00, 0.30, 1.00);
+  --ease-in-out:   cubic-bezier(0.40, 0.00, 0.20, 1.00);
+
+
+  /* ── Z-Index Layers ──────────────────────────────────────────── */
+  --z-index-background: 0;
+  --z-index-content:    10;
+  --z-index-sticky:     40;
+  --z-index-floating:   50;
+  --z-index-overlay:    60;
+  --z-index-modal:      70;
+  --z-index-toast:      80;
+  --z-index-tooltip:    90;
+
+}
+
+
+/* ───────────────────────────────────────────────────────────────────
+   2. BASE RESET & GLOBAL STYLES
+   ─────────────────────────────────────────────────────────────────── */
+
+@layer base {
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: auto;
+    overflow-x: hidden;
+    /* Premium text rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "ss01" 1;
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-body);
+    min-height: 100dvh;
+  }
+
+  /* ── Reduced motion: disable all complex animation globally ──── */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* ── Focus ring — always visible, always elegant ─────────────── */
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: var(--radius-xs);
+  }
+
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  /* ── Headings — semantic defaults (overridden by components) ─── */
+  h1 { font-size: var(--font-size-hero);       line-height: var(--line-height-hero);       letter-spacing: var(--letter-spacing-hero);       font-weight: var(--font-weight-extrabold); color: var(--color-text-primary); }
+  h2 { font-size: var(--font-size-heading-xl); line-height: var(--line-height-heading-xl); letter-spacing: var(--letter-spacing-heading-xl); font-weight: var(--font-weight-bold);      color: var(--color-text-primary); }
+  h3 { font-size: var(--font-size-heading-lg); line-height: var(--line-height-heading-lg); letter-spacing: var(--letter-spacing-heading-lg); font-weight: var(--font-weight-bold);      color: var(--color-text-primary); }
+  h4 { font-size: var(--font-size-heading-md); line-height: var(--line-height-heading-md); letter-spacing: var(--letter-spacing-heading-md); font-weight: var(--font-weight-semibold);  color: var(--color-text-primary); }
+  h5 { font-size: var(--font-size-heading-sm); line-height: var(--line-height-heading-sm); letter-spacing: var(--letter-spacing-heading-sm); font-weight: var(--font-weight-semibold);  color: var(--color-text-primary); }
+  h6 { font-size: var(--font-size-body-lg);    line-height: var(--line-height-body-lg);    letter-spacing: var(--letter-spacing-body-lg);    font-weight: var(--font-weight-semibold);  color: var(--color-text-primary); }
+
+  /* ── Links ───────────────────────────────────────────────────── */
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  /* ── Images ──────────────────────────────────────────────────── */
+  img,
+  video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* ── Lists used for navigation / menus ──────────────────────── */
+  ul[role='list'],
+  ol[role='list'] {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* ── Selection color ─────────────────────────────────────────── */
+  ::selection {
+    background-color: var(--color-accent);
+    color: #ffffff;
+  }
+
+}
+
+
+/* ───────────────────────────────────────────────────────────────────
+   3. TYPOGRAPHY UTILITIES
+   ─────────────────────────────────────────────────────────────────── */
+
+@layer utilities {
+
+  /* ── Type scale ──────────────────────────────────────────────── */
+
+  .type-hero {
+    font-size:      var(--font-size-hero);
+    line-height:    var(--line-height-hero);
+    letter-spacing: var(--letter-spacing-hero);
+    font-weight:    var(--font-weight-extrabold);
+    color:          var(--color-text-primary);
+    text-wrap:      balance;
+  }
+
+  .type-display {
+    font-size:      var(--font-size-display);
+    line-height:    var(--line-height-display);
+    letter-spacing: var(--letter-spacing-display);
+    font-weight:    var(--font-weight-extrabold);
+    color:          var(--color-text-primary);
+    text-wrap:      balance;
+  }
+
+  .type-heading-xl {
+    font-size:      var(--font-size-heading-xl);
+    line-height:    var(--line-height-heading-xl);
+    letter-spacing: var(--letter-spacing-heading-xl);
+    font-weight:    var(--font-weight-bold);
+    color:          var(--color-text-primary);
+    text-wrap:      balance;
+  }
+
+  .type-heading-lg {
+    font-size:      var(--font-size-heading-lg);
+    line-height:    var(--line-height-heading-lg);
+    letter-spacing: var(--letter-spacing-heading-lg);
+    font-weight:    var(--font-weight-bold);
+    color:          var(--color-text-primary);
+    text-wrap:      balance;
+  }
+
+  .type-heading-md {
+    font-size:      var(--font-size-heading-md);
+    line-height:    var(--line-height-heading-md);
+    letter-spacing: var(--letter-spacing-heading-md);
+    font-weight:    var(--font-weight-semibold);
+    color:          var(--color-text-primary);
+  }
+
+  .type-heading-sm {
+    font-size:      var(--font-size-heading-sm);
+    line-height:    var(--line-height-heading-sm);
+    letter-spacing: var(--letter-spacing-heading-sm);
+    font-weight:    var(--font-weight-semibold);
+    color:          var(--color-text-primary);
+  }
+
+  .type-body-lg {
+    font-size:      var(--font-size-body-lg);
+    line-height:    var(--line-height-body-lg);
+    letter-spacing: var(--letter-spacing-body-lg);
+    font-weight:    var(--font-weight-regular);
+  }
+
+  .type-body {
+    font-size:      var(--font-size-body);
+    line-height:    var(--line-height-body);
+    letter-spacing: var(--letter-spacing-body);
+    font-weight:    var(--font-weight-regular);
+  }
+
+  /* Body SM: 13px — tags, captions, meta labels */
+  .type-body-sm {
+    font-size:      0.8125rem;
+    line-height:    1.55;
+    letter-spacing: 0em;
+    font-weight:    var(--font-weight-regular);
+  }
+
+  .type-caption {
+    font-size:      var(--font-size-caption);
+    line-height:    var(--line-height-caption);
+    letter-spacing: var(--letter-spacing-caption);
+    font-weight:    var(--font-weight-regular);
+    color:          var(--color-text-muted);
+  }
+
+  .type-label {
+    font-size:      var(--font-size-label);
+    line-height:    var(--line-height-label);
+    letter-spacing: var(--letter-spacing-label);
+    font-weight:    var(--font-weight-medium);
+    text-transform: uppercase;
+  }
+
+  .type-btn {
+    font-size:      var(--font-size-btn);
+    line-height:    var(--line-height-btn);
+    letter-spacing: var(--letter-spacing-btn);
+    font-weight:    var(--font-weight-medium);
+  }
+
+
+  /* ── Layout utilities ────────────────────────────────────────── */
+
+  /* Max-width reading container for body copy */
+  .reading-width {
+    max-width: var(--spacing-reading);
+  }
+
+  /* Full-bleed section padding that adapts per breakpoint */
+  .section-padding {
+    padding-block: var(--spacing-section-sm);
+  }
+
+  @media (min-width: 640px) {
+    .section-padding {
+      padding-block: var(--spacing-section-md);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .section-padding {
+      padding-block: var(--spacing-section-lg);
+    }
+  }
+
+  @media (min-width: 1440px) {
+    .section-padding {
+      padding-block: var(--spacing-section-xl);
+    }
+  }
+
+
+  /* ── Glass morphism surface ──────────────────────────────────── */
+  .glass {
+    background:              var(--color-surface-glass);
+    backdrop-filter:         blur(16px) saturate(1.4);
+    -webkit-backdrop-filter: blur(16px) saturate(1.4);
+    border:                  1px solid var(--color-border-subtle);
+    box-shadow:              var(--shadow-glass);
+  }
+
+
+  /* ── Skeleton shimmer ────────────────────────────────────────── */
+  .skeleton {
+    background: linear-gradient(
+      90deg,
+      var(--color-bg-tertiary) 25%,
+      rgba(228, 228, 225, 0.6) 50%,
+      var(--color-bg-tertiary) 75%
+    );
+    background-size: 200% 100%;
+    animation: skeleton-shimmer 1.4s ease-in-out infinite;
+  }
+
+  @keyframes skeleton-shimmer {
+    0%   { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+
+
+  /* ── Section background variants ────────────────────────────── */
+  .section-white { background-color: var(--color-bg); }
+  .section-gray  { background-color: var(--color-bg-secondary); }
+  .section-dark  {
+    background-color: var(--color-dark);
+    color: var(--color-dark-text);
+  }
+  .section-dark h1,
+  .section-dark h2,
+  .section-dark h3,
+  .section-dark h4,
+  .section-dark h5,
+  .section-dark h6 {
+    color: var(--color-text-inverse);
+  }
+
+
+  /* ── Hero ambient gradient — very subtle top-center radial ───── */
+  .hero-glow {
+    background:
+      radial-gradient(ellipse 70% 40% at 50% -10%, rgba(29, 78, 216, 0.055) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 30% at 75% 20%, rgba(29, 78, 216, 0.025) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  /* ── Gradient blob — section accent ────────────────────────── */
+  .gradient-blob {
+    background: radial-gradient(
+      ellipse 60% 50% at 50% 0%,
+      rgba(29, 78, 216, 0.05) 0%,
+      transparent 70%
+    );
+    pointer-events: none;
+  }
+
+  /* ── Noise texture overlay — extremely subtle ───────────────── */
+  /* Applied as a ::before pseudo-element where needed             */
+  .noise-overlay::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    border-radius: inherit;
+  }
+
+  /* ── Smooth scroll — applied only where needed ──────────────── */
+  .smooth-scroll {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .smooth-scroll {
+      scroll-behavior: auto;
+    }
+  }
+
+  /* ── Premium card base ───────────────────────────────────────── */
+  /* Shared base for all surface cards */
+  .card-surface {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .card-surface:hover {
+    box-shadow: var(--shadow-medium);
+    border-color: var(--color-border-strong);
+    transform: translateY(-2px);
+  }
+
+  /* ── Horizontal rule ─────────────────────────────────────────── */
+  .divider {
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      var(--color-border) 20%,
+      var(--color-border) 80%,
+      transparent 100%
+    );
+  }
+
+}

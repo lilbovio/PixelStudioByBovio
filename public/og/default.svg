@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#ffffff"/>
+  <!-- Top accent bar -->
+  <rect x="0" y="0" width="1200" height="5" fill="#111827"/>
+  <!-- Studio name -->
+  <text x="600" y="275" font-family="system-ui, -apple-system, sans-serif" font-size="58" font-weight="800" text-anchor="middle" letter-spacing="-2" fill="#0f0f0f">Pixel Studio by Bovio</text>
+  <!-- Tagline -->
+  <text x="600" y="342" font-family="system-ui, -apple-system, sans-serif" font-size="26" font-weight="400" text-anchor="middle" letter-spacing="0" fill="#6b7280">Digital Design Studio</text>
+  <!-- Location -->
+  <text x="600" y="400" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="400" text-anchor="middle" fill="#9ca3af">Guadalajara, Mexico</text>
+  <!-- Divider line -->
+  <rect x="520" y="450" width="160" height="1" fill="#e5e7eb"/>
+  <!-- Domain -->
+  <text x="600" y="482" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="400" text-anchor="middle" fill="#9ca3af">pixelstudiobybovio.lat</text>
+</svg>
