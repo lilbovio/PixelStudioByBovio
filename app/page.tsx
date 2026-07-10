@@ -43,7 +43,7 @@ import {
 // ─── Metadata ─────────────────────────────────────────────────
 
 export const metadata: Metadata = buildPageMetadata({
-  title: 'Diseño Web Guadalajara — Pixel Studio by Bovio',
+  title: 'Pixel Studio by Bovio',
   description:
     'Diseño y desarrollo web profesional en Guadalajara, México. Creamos sitios web modernos que ayudan a tu negocio a ganar confianza, atraer clientes y crecer. Landing pages, sitios empresariales y rediseños.',
   path: '/',
